@@ -19,6 +19,7 @@ typedef struct s_philo {
     int last_meal;
     int last_sleep;
     int last_think;
+    struct s_philo *next;
 } t_philo;
 
 // Main
