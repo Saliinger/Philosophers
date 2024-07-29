@@ -2,8 +2,8 @@
 # define PHILO_H
 
 # include <pthread.h>
-# include <unistd.h>
 # include <stdio.h>
+# include <stdlib.h>
 
 // Struct
 typedef struct s_data {

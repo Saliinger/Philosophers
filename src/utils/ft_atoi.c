@@ -6,12 +6,11 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 11:46:19 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/29 13:03:48 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/29 16:30:19 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
+#include "philo.h"
 
 int	ft_atoi(const char *str)
 {
