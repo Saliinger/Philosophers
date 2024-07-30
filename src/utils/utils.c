@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/30 19:13:14 by anoukan           #+#    #+#             */
+/*   Updated: 2024/07/30 19:13:15 by anoukan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "philo.h"
 
-void ft_print(t_philo **philo)
+void	ft_print(t_philo **philo)
 {
-    while (*philo)
-    {
-        printf("id: %d\n", (*philo)->id);
-        *philo = (*philo)->next;
-    }
+	while (*philo)
+	{
+		printf("id: %d\n", (*philo)->id);
+		*philo = (*philo)->next;
+	}
 }
