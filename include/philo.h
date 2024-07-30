@@ -12,6 +12,7 @@ typedef struct s_data {
     int time_to_eat;
     int time_to_sleep;
     int number_of_dishes;
+    pthread_mutex_t *l_fork;
 } t_data;
 
 typedef struct s_philo {
@@ -26,6 +27,9 @@ typedef struct s_philo {
 
 // Utils
 int	ft_atoi(const char *str);
-void init_data(t_data *data ,char **av);
+void init_data(t_philo **philo, t_data *data ,char **av);
+void ft_free(t_data *data, t_philo **philo);
+void new_philo(t_philo **philo, int index);
+void ft_print(t_philo **philo);
 
 #endif

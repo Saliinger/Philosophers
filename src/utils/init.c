@@ -1,6 +1,18 @@
-#include "../../include/philo.h"
+#include "philo.h"
 
-void init_data(t_data *data ,char **av)
+static void create_philo(t_philo **philo, t_data *data)
+{
+    int i;
+
+    i = 0;
+    while (i < data->number_of_philo)
+    {
+        new_philo(philo, i);
+        i++;
+    }
+}
+
+void init_data(t_philo **philo, t_data *data ,char **av)
 {
     data->number_of_philo = ft_atoi(av[1]);
     data->time_to_die = ft_atoi(av[2]);
@@ -10,4 +22,5 @@ void init_data(t_data *data ,char **av)
         data->number_of_dishes = ft_atoi(av[5]);
     else
         data->number_of_dishes = -1;
+    create_philo(philo, data);
 }
