@@ -3,16 +3,18 @@ CFLAGS = -Wall -Wextra -Werror -I./include/
 DEBUG = -g3 #-fsanitize=address
 CC = cc
 UTILS = ./src/utils
+SIM = ./src/sim
 SRCD = ./src
 
 SRC =	$(UTILS)/ft_atoi.c\
 		$(UTILS)/ft_free.c\
 		$(UTILS)/init.c\
-		$(UTILS)/init_philo.c\
 		$(UTILS)/utils.c\
-		$(SRCD)/eat.c\
-		$(SRCD)/sleep.c\
-		$(SRCD)/think.c\
+		$(SIM)/init_philo.c\
+		$(SIM)/end.c\
+		$(SIM)/init_fork.c\
+		$(SIM)/routine.c\
+		$(SIM)/start.c\
 		main.c
 
 OBJ =		$(SRC:.c=.o)

@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 19:12:39 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/31 11:56:48 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/31 22:10:25 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@ int	main(int argc, char **argv)
 		return (printf("Error\nmalloc data\n"), 0);
 	philo = (t_philo **)malloc(sizeof(t_philo *));
 	if (!philo)
-		return (ft_free(data, philo), 0);
-	init_data(philo, data, argv);
-	ft_free(data, philo);
+		return (ft_free(data, philo), printf("Error\nmalloc philo\n"), 0);
+	init_data(data, argv);
 	return (0);
 }
