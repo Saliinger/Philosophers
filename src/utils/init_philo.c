@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 19:13:03 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/30 19:13:04 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/31 12:35:38 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	new_philo(t_philo **philo, int index)
 	if (!new)
 		return ;
 	new->next = NULL;
-	new->id = index;
+	new->id = index + 1;
 	if (*philo == NULL)
 		*philo = new;
 	else
