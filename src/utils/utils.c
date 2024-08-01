@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 19:13:14 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/31 22:21:36 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/01 11:33:27 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,16 @@ void	ft_print(t_philo **philo)
 	}
 }
 
-void	ft_status(int id, char *str, int time)
+void	ft_status(int id, char *str)
 {
 	printf("%d %d %s\n", time, id, str);
+}
+
+int	get_time(void)
+{
+	int	time;
+
+	return (time);
 }
 
 bool	is_digit(int ac, char **av)
