@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 19:13:21 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/01 15:58:06 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/01 16:49:29 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@
 typedef struct s_philo
 {
 	int				id;
-	int				last_meal;
-	int				last_sleep;
-	int				last_think;
+	long long		last_meal;
+	long long		last_sleep;
+	long long		last_think;
 	pthread_mutex_t	l_fork;
 	pthread_mutex_t	r_fork;
 	pthread_t		thread;
@@ -36,9 +36,9 @@ typedef struct s_philo
 typedef struct s_data
 {
 	int				number_of_philo;
-	int				time_to_die;
-	int				time_to_eat;
-	int				time_to_sleep;
+	long long		time_to_die;
+	long long		time_to_eat;
+	long long		time_to_sleep;
 	int				number_of_dishes;
 	pthread_mutex_t	*fork;
 	t_philo			**philosophers;
@@ -55,7 +55,7 @@ int					ft_atoi(const char *str);
 void				init_data(t_data *data, char **av);
 void				ft_free(t_data *data, t_philo **philo);
 void				ft_status(int id, char *str);
-
+long long			current_timestamp(void);
 void				ft_print(t_philo **philo);
 bool				is_digit(int ac, char **av);
 

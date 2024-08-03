@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 19:13:14 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/01 11:33:27 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/01 16:52:03 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,17 @@ void	ft_print(t_philo **philo)
 	}
 }
 
-void	ft_status(int id, char *str)
+long long	current_timestamp(void)
 {
-	printf("%d %d %s\n", time, id, str);
+	struct timeval	tv;
+
+	gettimeofday(&tv, NULL);
+	return (tv.tv_sec * 1000LL + tv.tv_usec / 1000);
 }
 
-int	get_time(void)
+void	ft_status(int id, char *str)
 {
-	int	time;
-
-	return (time);
+	printf("%lld %d %s\n", current_timestamp(), id, str);
 }
 
 bool	is_digit(int ac, char **av)
