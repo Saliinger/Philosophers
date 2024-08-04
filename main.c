@@ -10,11 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "include/philo.h"
 #include "philo.h"
 
 int	main(int argc, char **argv)
 {
 	t_data	*data;
+	t_philo	**philo;
 
 	if (argc < 5 || argc > 6)
 		return (printf("you need to use Philo properly\n"), 0);
@@ -23,11 +25,10 @@ int	main(int argc, char **argv)
 	data = (t_data *)malloc(sizeof(t_data));
 	if (!data)
 		return (printf("Error\nmalloc data\n"), 0);
-	data->philosophers = (t_philo **)malloc(sizeof(t_philo *));
-	if (!data->philosophers)
-		return (ft_free(data, data->philosophers),
-			printf("Error\nmalloc philo\n"), 0);
+	philo = (t_philo **)malloc(sizeof(t_philo *));
+	if (!philo)
+		return (ft_free(data, philo), printf("Error\nmalloc philo\n"), 0);
 	init_data(data, argv);
-	start(data);
+	start(data, philo);
 	return (0);
 }

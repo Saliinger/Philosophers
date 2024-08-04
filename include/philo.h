@@ -20,6 +20,15 @@
 # include <sys/time.h>
 
 // Struct
+typedef struct s_data
+{
+	int				number_of_philo;
+	long long		time_to_die;
+	long long		time_to_eat;
+	long long		time_to_sleep;
+	int				number_of_dishes;
+	pthread_mutex_t	*fork;
+}					t_data;
 
 typedef struct s_philo
 {
@@ -31,21 +40,11 @@ typedef struct s_philo
 	pthread_mutex_t	r_fork;
 	pthread_t		thread;
 	struct s_philo	*next;
+    struct s_data   *data;
 }					t_philo;
 
-typedef struct s_data
-{
-	int				number_of_philo;
-	long long		time_to_die;
-	long long		time_to_eat;
-	long long		time_to_sleep;
-	int				number_of_dishes;
-	pthread_mutex_t	*fork;
-	t_philo			**philosophers;
-}					t_data;
-
 // Sim
-void				start(t_data *data);
+void				start(t_data *data, t_philo **philo);
 void				create_philo(t_philo **philo, t_data *data);
 void				init_fork(t_data *data);
 void				*routine(void *arg);

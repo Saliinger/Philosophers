@@ -14,22 +14,23 @@
 
 void	*routine(void *arg)
 {
-	t_data	*data;
-	t_philo	**philo;
+	//t_data	*data;
+	t_philo	*philo;
 
-	data = (t_data *)arg;
-	philo = data->philosophers;
+	philo = (t_philo *)arg;
+	//data = philo->data;
+
 	while (1)
 	{
-		pthread_mutex_lock(&(*philo)->l_fork);
-		ft_status((*philo)->id, "has taken the left fork");
-		pthread_mutex_lock(&(*philo)->r_fork);
-		ft_status((*philo)->id, "has taken the right fork");
-		ft_status((*philo)->id, "is eating");
-		pthread_mutex_unlock(&(*philo)->l_fork);
-		pthread_mutex_unlock(&(*philo)->r_fork);
-		ft_status((*philo)->id, "is sleeping");
-		ft_status((*philo)->id, "is thinking");
+		pthread_mutex_lock(&philo->l_fork);
+		ft_status(philo->id, "has taken the left fork");
+		pthread_mutex_lock(&philo->r_fork);
+		ft_status(philo->id, "has taken the right fork");
+		ft_status(philo->id, "is eating");
+		pthread_mutex_unlock(&philo->l_fork);
+		pthread_mutex_unlock(&philo->r_fork);
+		ft_status(philo->id, "is sleeping");
+		ft_status(philo->id, "is thinking");
 	}
 	return (NULL);
 }

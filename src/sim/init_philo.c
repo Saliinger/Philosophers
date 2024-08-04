@@ -33,6 +33,7 @@ static void	new_philo(t_data *data, t_philo **philo, int index)
 	}
 	new->r_fork = data->fork[index];
 	new->l_fork = data->fork[index + 1];
+    new->data = data;
 }
 
 void	create_philo(t_philo **philo, t_data *data)

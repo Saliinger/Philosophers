@@ -40,7 +40,7 @@ bool	is_digit(int ac, char **av)
 	int	j;
 
 	i = 1;
-	while (ac >= i)
+	while (ac > i)
 	{
 		j = 0;
 		while (av[i][j])
