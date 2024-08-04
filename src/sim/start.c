@@ -16,5 +16,6 @@ void	start(t_data *data, t_philo **philo)
 {
 	init_fork(data);
 	create_philo(philo, data);
-	printf("initialyzed\n");
+	printf("initialyzed\nstart routine");
+    thread(data, philo);
 }

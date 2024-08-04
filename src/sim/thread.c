@@ -12,13 +12,13 @@
 
 #include "philo.h"
 
-void	thread(t_data *data)
+void	thread(t_data *data, t_philo **philo_l)
 {
 	int		i;
 	t_philo	*philo;
 
 	i = 0;
-	philo = data->philosophers;
+	philo = *philo_l;
 	while (i < data->number_of_philo)
 	{
 		pthread_create(&philo->thread, NULL, routine, philo);
@@ -26,7 +26,7 @@ void	thread(t_data *data)
 		philo = philo->next;
 	}
 	i = 0;
-	philo = data->philosophers;
+	philo = *philo_l;
 	while (i < data->number_of_philo)
 	{
 		pthread_join(&philo->thread, NULL);

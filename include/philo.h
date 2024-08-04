@@ -48,6 +48,7 @@ void				start(t_data *data, t_philo **philo);
 void				create_philo(t_philo **philo, t_data *data);
 void				init_fork(t_data *data);
 void				*routine(void *arg);
+void                thread(t_data *data, t_philo **philo_l);
 
 // Utils
 int					ft_atoi(const char *str);
