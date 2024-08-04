@@ -32,7 +32,10 @@ static void	new_philo(t_data *data, t_philo **philo, int index)
 		current->next = new;
 	}
 	new->r_fork = data->fork[index];
-	new->l_fork = data->fork[index + 1];
+    if (index != data->number_of_philo - 1)
+	    new->l_fork = data->fork[index + 1];
+    else
+        new->l_fork = data->fork[0];
     new->data = data;
 }
 

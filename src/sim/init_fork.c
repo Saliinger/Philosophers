@@ -17,9 +17,15 @@ void	init_fork(t_data *data)
 	int	i;
 
 	i = 0;
-	while (i < data->number_of_philo)
+    data->fork = malloc(data->number_of_philo * sizeof(pthread_mutex_t) + 1);
+    if (!data->fork) { return; }
+    while (i < data->number_of_philo)
 	{
-		pthread_mutex_init(&data->fork[i], NULL);
+        if (pthread_mutex_init(&data->fork[i], NULL) != 0)
+        {
+            free(data->fork);
+            return;
+        }
 		i++;
 	}
 }
