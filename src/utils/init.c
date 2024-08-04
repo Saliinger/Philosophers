@@ -14,6 +14,7 @@
 
 void	init_data(t_data *data, char **av)
 {
+    data->number_of_death = 0;
 	data->number_of_philo = ft_atoi(av[1]);
 	data->time_to_die = ft_atoi(av[2]);
 	data->time_to_eat = ft_atoi(av[3]);

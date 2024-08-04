@@ -29,7 +29,7 @@ void	thread(t_data *data, t_philo **philo_l)
 	philo = *philo_l;
 	while (i < data->number_of_philo)
 	{
-		pthread_join(&philo->thread, NULL);
+		pthread_join(philo->thread, NULL);
 		i++;
 		philo = philo->next;
 	}

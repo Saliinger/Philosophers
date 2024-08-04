@@ -18,6 +18,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <sys/time.h>
+# include <unistd.h>
 
 // Struct
 typedef struct s_data
@@ -27,6 +28,7 @@ typedef struct s_data
 	long long		time_to_eat;
 	long long		time_to_sleep;
 	int				number_of_dishes;
+    int             number_of_death;
 	pthread_mutex_t	*fork;
 }					t_data;
 
