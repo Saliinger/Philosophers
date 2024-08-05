@@ -34,10 +34,7 @@ void	ft_free(t_data *data, t_philo **philo, bool fail)
 	if (data)
 		free(data);
     if (fail == true)
-    {
-        printf("Error\nthe program has encounter an error of malloc\n");
         exit(EXIT_FAILURE);
-    }
     else
         exit(EXIT_SUCCESS);
 }

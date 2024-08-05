@@ -58,7 +58,7 @@ void                end(t_data *data, t_philo **philo);
 
 // Utils
 int					ft_atoi(const char *str);
-void				init_data(t_data *data, char **av);
+void				init_data(t_data *data, char **av, t_philo **philo);
 void				ft_free(t_data *data, t_philo **philo, bool fail);
 void				ft_status(t_philo *philo, char *str);
 long long			current_timestamp(void);

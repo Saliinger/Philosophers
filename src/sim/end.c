@@ -14,6 +14,11 @@
 
 void end(t_data *data, t_philo **philo)
 {
-    printf("end of simulation\n");
+    if (data->number_of_death > 0)
+    {
+        printf("%d has died\n", (*philo)->id);
+    }
+    else
+        printf("end of simulation\n");
     ft_free(data, philo, false);
 }

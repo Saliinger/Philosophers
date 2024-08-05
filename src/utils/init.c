@@ -12,7 +12,7 @@
 
 #include "philo.h"
 
-void	init_data(t_data *data, char **av)
+void	init_data(t_data *data, char **av, t_philo **philo)
 {
     data->number_of_death = 0;
 	data->number_of_philo = ft_atoi(av[1]);
@@ -23,4 +23,9 @@ void	init_data(t_data *data, char **av)
 		data->number_of_dishes = ft_atoi(av[5]);
 	else
 		data->number_of_dishes = -1;
+    if (data->number_of_philo <= 0 || data->time_to_die <= 0 || data->time_to_eat <= 0 || data->time_to_sleep <= 0 || data->number_of_dishes < -1)
+    {
+        printf("Error\nthe settings are negatif\n");
+        ft_free(data, philo, true);
+    }
 }

@@ -27,8 +27,8 @@ int	main(int argc, char **argv)
 		return (printf("Error\nmalloc data\n"), 0);
 	philo = (t_philo **)malloc(sizeof(t_philo *));
 	if (!philo)
-		return (ft_free(data, philo), printf("Error\nmalloc philo\n"), 0);
-	init_data(data, argv);
+		return (ft_free(data, philo, true), printf("Error\nmalloc philo\n"), 0);
+	init_data(data, argv, philo);
 	start(data, philo);
 	return (0);
 }

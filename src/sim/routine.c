@@ -72,7 +72,6 @@ void	*routine(void *arg)
 
 	philo = (t_philo *)arg;
 	data = philo->data;
-
     if (data->number_of_dishes > 0) { loop_meal(philo); }
     else { loop_death(philo); }
 	return (NULL);

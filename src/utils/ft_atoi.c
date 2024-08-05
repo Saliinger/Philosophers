@@ -5,7 +5,7 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 11:46:19 by anoukan           #+#    #+#             */
+/*   created: 2023/10/23 11:46:19 by anoukan           #+#    #+#             */
 /*   Updated: 2024/07/30 19:12:48 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -14,21 +14,21 @@
 
 int	ft_atoi(const char *str)
 {
-	int		i;
-	int		j;
-	int		c;
-	char	*cstr;
+	long long		i;
+	long long		j;
+	long long		signe;
+	char	        *cstr;
 
 	i = 0;
 	j = 0;
-	c = 1;
+	signe = 1;
 	cstr = (char *)str;
 	while (cstr[i] == 32 || (cstr[i] >= 9 && cstr[i] <= 13))
 		++i;
 	if (cstr[i] == '-' || cstr[i] == '+')
 	{
 		if (cstr[i] == '-')
-			c *= -1;
+			signe *= -1;
 		i++;
 	}
 	while (cstr[i] >= '0' && cstr[i] <= '9')
@@ -37,5 +37,5 @@ int	ft_atoi(const char *str)
 		j += cstr[i] - '0';
 		++i;
 	}
-	return (j * c);
+	return (j * signe);
 }
