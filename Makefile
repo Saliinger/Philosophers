@@ -11,6 +11,7 @@ SRC =	$(UTILS)/ft_atoi.c\
 		$(UTILS)/init.c\
 		$(UTILS)/utils.c\
 		$(SIM)/init_philo.c\
+		$(SIM)/init_write.c\
 		$(SIM)/end.c\
 		$(SIM)/init_fork.c\
 		$(SIM)/routine.c\

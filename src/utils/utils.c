@@ -31,7 +31,9 @@ long long	current_timestamp(void)
 
 void	ft_status(t_philo *philo, char *str)
 {
+    pthread_mutex_lock(philo->data->write);
 	printf("%lld %d %s\n", current_timestamp() - philo->start, philo->id, str);
+    pthread_mutex_unlock(philo->data->write);
 }
 
 bool	is_digit(int ac, char **av)

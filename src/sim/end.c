@@ -11,3 +11,9 @@
 /* ************************************************************************** */
 
 #include "philo.h"
+
+void end(t_data *data, t_philo **philo)
+{
+    printf("end of simulation\n");
+    ft_free(data, philo, false);
+}

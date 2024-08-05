@@ -30,6 +30,7 @@ typedef struct s_data
 	int				number_of_dishes;
     int             number_of_death;
 	pthread_mutex_t	*fork;
+    pthread_mutex_t *write;
 }					t_data;
 
 typedef struct s_philo
@@ -49,14 +50,16 @@ typedef struct s_philo
 // Sim
 void				start(t_data *data, t_philo **philo);
 void				create_philo(t_philo **philo, t_data *data);
-void				init_fork(t_data *data);
+void				init_fork(t_data *data, t_philo **philo);
 void				*routine(void *arg);
 void                thread(t_data *data, t_philo **philo_l);
+void                init_write(t_data *data, t_philo **philo);
+void                end(t_data *data, t_philo **philo);
 
 // Utils
 int					ft_atoi(const char *str);
 void				init_data(t_data *data, char **av);
-void				ft_free(t_data *data, t_philo **philo);
+void				ft_free(t_data *data, t_philo **philo, bool fail);
 void				ft_status(t_philo *philo, char *str);
 long long			current_timestamp(void);
 void				ft_print(t_philo **philo);

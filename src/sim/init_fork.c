@@ -12,7 +12,7 @@
 
 #include "philo.h"
 
-void	init_fork(t_data *data)
+void	init_fork(t_data *data, t_philo **philo)
 {
 	int	i;
 
@@ -24,7 +24,7 @@ void	init_fork(t_data *data)
         if (pthread_mutex_init(&data->fork[i], NULL) != 0)
         {
             free(data->fork);
-            return;
+            ft_free(data, philo, true);
         }
 		i++;
 	}

@@ -17,16 +17,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c45240e8-a6c5-41a5-8026-311a6e0c3e59" name="Changes" comment="add init for fork + fix segfault by correcting bad alloc">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+    <list default="true" id="c45240e8-a6c5-41a5-8026-311a6e0c3e59" name="Changes" comment="fix time stamp need to take care of death">
+      <change afterPath="$PROJECT_DIR$/src/sim/init_write.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/philo.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/philo.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/init_philo.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/init_philo.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/routine.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/routine.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/thread.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/thread.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/init.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/init.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/utils.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,11 +126,6 @@
         <option name="CLION.COMPOUND.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Native Application.all" />
       <item itemvalue="Native Application.fclean" />
@@ -157,6 +146,7 @@
       <workItem from="1722260272847" duration="2780000" />
       <workItem from="1722609391835" duration="22000" />
       <workItem from="1722771164865" duration="7190000" />
+      <workItem from="1722841160992" duration="3295000" />
     </task>
     <task id="LOCAL-00001" summary="lol">
       <option name="closed" value="true" />
@@ -206,7 +196,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722781952165</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fix time stamp need to take care of death">
+      <option name="closed" value="true" />
+      <created>1722842005741</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1722842005741</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,6 +214,7 @@
     <MESSAGE value="lol" />
     <MESSAGE value="add utils and data init" />
     <MESSAGE value="add init for fork + fix segfault by correcting bad alloc" />
-    <option name="LAST_COMMIT_MESSAGE" value="add init for fork + fix segfault by correcting bad alloc" />
+    <MESSAGE value="fix time stamp need to take care of death" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix time stamp need to take care of death" />
   </component>
 </project>

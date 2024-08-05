@@ -26,10 +26,18 @@ static void	free_philo(t_philo **philo)
 	free(philo);
 }
 
-void	ft_free(t_data *data, t_philo **philo)
+void	ft_free(t_data *data, t_philo **philo, bool fail)
 {
+
 	if (philo)
 		free_philo(philo);
 	if (data)
 		free(data);
+    if (fail == true)
+    {
+        printf("Error\nthe program has encounter an error of malloc\n");
+        exit(EXIT_FAILURE);
+    }
+    else
+        exit(EXIT_SUCCESS);
 }
