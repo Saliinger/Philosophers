@@ -29,9 +29,9 @@ long long	current_timestamp(void)
 	return (tv.tv_sec * 1000 + tv.tv_usec / 1000);
 }
 
-void	ft_status(int id, char *str)
+void	ft_status(t_philo *philo, char *str)
 {
-	printf("%lld %d %s\n", current_timestamp(), id, str);
+	printf("%lld %d %s\n", current_timestamp() - philo->start, philo->id, str);
 }
 
 bool	is_digit(int ac, char **av)

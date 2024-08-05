@@ -16,22 +16,23 @@ void    loop_death(t_philo *philo)
 {
     long long life_time;
 
-    life_time = current_timestamp() + philo->data->time_to_die;
-    while (life_time < current_timestamp())
+    philo->start = current_timestamp();
+    life_time = philo->data->time_to_die + current_timestamp();
+    while (life_time >= current_timestamp())
     {
         pthread_mutex_lock(&philo->l_fork);
-        ft_status(philo->id, "has taken the left fork");
+        ft_status(philo, "has taken the left fork");
         pthread_mutex_lock(&philo->r_fork);
-        ft_status(philo->id, "has taken the right fork");
-        ft_status(philo->id, "is eating");
+        ft_status(philo, "has taken the right fork");
+        ft_status(philo, "is eating");
         usleep(philo->data->time_to_eat * 100);
         philo->last_meal = current_timestamp();
         pthread_mutex_unlock(&philo->l_fork);
         pthread_mutex_unlock(&philo->r_fork);
-        ft_status(philo->id, "is sleeping");
+        ft_status(philo, "is sleeping");
         usleep(philo->data->time_to_sleep * 100);
         philo->last_sleep = current_timestamp();
-        ft_status(philo->id, "is thinking");
+        ft_status(philo, "is thinking");
         philo->last_think = current_timestamp();
     }
 }
@@ -41,23 +42,23 @@ void    loop_meal(t_philo *philo)
     int i = 0;
     long long life_time;
 
-//    life_time = current_timestamp() + philo->data->time_to_die;
-    life_time = 1;
-    while (life_time < 10 && i < philo->data->number_of_dishes)
+    philo->start = current_timestamp();
+    life_time = philo->data->time_to_die + current_timestamp();
+    while (life_time >= current_timestamp()&& i < philo->data->number_of_dishes)
     {
         pthread_mutex_lock(&philo->l_fork);
-        ft_status(philo->id, "has taken the left fork");
+        ft_status(philo, "has taken the left fork");
         pthread_mutex_lock(&philo->r_fork);
-        ft_status(philo->id, "has taken the right fork");
-        ft_status(philo->id, "is eating");
+        ft_status(philo, "has taken the right fork");
+        ft_status(philo, "is eating");
         usleep(philo->data->time_to_eat * 100);
         philo->last_meal = current_timestamp();
         pthread_mutex_unlock(&philo->l_fork);
         pthread_mutex_unlock(&philo->r_fork);
-        ft_status(philo->id, "is sleeping");
+        ft_status(philo, "is sleeping");
         usleep(philo->data->time_to_sleep * 100);
         philo->last_sleep = current_timestamp();
-        ft_status(philo->id, "is thinking");
+        ft_status(philo, "is thinking");
         philo->last_think = current_timestamp();
         i++;
         life_time++;

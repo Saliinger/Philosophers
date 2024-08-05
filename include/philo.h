@@ -43,6 +43,7 @@ typedef struct s_philo
 	pthread_t		thread;
 	struct s_philo	*next;
     struct s_data   *data;
+    long long       start;
 }					t_philo;
 
 // Sim
@@ -56,7 +57,7 @@ void                thread(t_data *data, t_philo **philo_l);
 int					ft_atoi(const char *str);
 void				init_data(t_data *data, char **av);
 void				ft_free(t_data *data, t_philo **philo);
-void				ft_status(int id, char *str);
+void				ft_status(t_philo *philo, char *str);
 long long			current_timestamp(void);
 void				ft_print(t_philo **philo);
 bool				is_digit(int ac, char **av);
