@@ -6,7 +6,7 @@ UTILS = ./src/utils
 SIM = ./src/sim
 SRCD = ./src
 
-SRC =	$(UTILS)/ft_atoi.c\
+SRC =	$(UTILS)/ft_atol.c\
 		$(UTILS)/ft_free.c\
 		$(UTILS)/init.c\
 		$(UTILS)/utils.c\
