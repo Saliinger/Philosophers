@@ -17,13 +17,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c45240e8-a6c5-41a5-8026-311a6e0c3e59" name="Changes" comment="add security for negative input">
+    <list default="true" id="c45240e8-a6c5-41a5-8026-311a6e0c3e59" name="Changes" comment="change atoi to atol">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/init_write.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/init_write.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/start.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/start.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/thread.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/thread.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/utils.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/routine.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/routine.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +145,7 @@
       <workItem from="1722260272847" duration="2780000" />
       <workItem from="1722609391835" duration="22000" />
       <workItem from="1722771164865" duration="7190000" />
-      <workItem from="1722841160992" duration="6346000" />
+      <workItem from="1722841160992" duration="8269000" />
     </task>
     <task id="LOCAL-00001" summary="lol">
       <option name="closed" value="true" />
@@ -223,7 +219,23 @@
       <option name="project" value="LOCAL" />
       <updated>1722852439704</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add error message">
+      <option name="closed" value="true" />
+      <created>1722852870141</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1722852870141</updated>
+    </task>
+    <task id="LOCAL-00011" summary="change atoi to atol">
+      <option name="closed" value="true" />
+      <created>1722852949234</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1722852949234</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,6 +248,8 @@
     <MESSAGE value="fix time stamp need to take care of death" />
     <MESSAGE value="add end of sim + write mutex + fix time stamp" />
     <MESSAGE value="add security for negative input" />
-    <option name="LAST_COMMIT_MESSAGE" value="add security for negative input" />
+    <MESSAGE value="add error message" />
+    <MESSAGE value="change atoi to atol" />
+    <option name="LAST_COMMIT_MESSAGE" value="change atoi to atol" />
   </component>
 </project>

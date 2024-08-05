@@ -14,9 +14,9 @@
 
 void end(t_data *data, t_philo **philo)
 {
-    if (data->number_of_death > 0)
+    if (data->number_of_death >= 0)
     {
-        printf("%d has died\n", (*philo)->id);
+        printf("%d has died\n", (*philo)->data->number_of_death);
     }
     else
         printf("end of simulation\n");

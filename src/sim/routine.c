@@ -14,12 +14,14 @@
 
 void    loop_death(t_philo *philo)
 {
-    long long life_time;
 
     philo->start = current_timestamp();
-    life_time = philo->data->time_to_die + current_timestamp();
-    while (life_time >= current_timestamp())
+    while (philo->data->number_of_death == 0)
     {
+        if ((philo->last_think - philo->start || philo->last_meal - philo->start || philo->last_sleep - philo->start) < philo->data->time_to_die) {
+            philo->data->number_of_death += 1;
+            return;
+        }
         pthread_mutex_lock(&philo->l_fork);
         ft_status(philo, "has taken the left fork");
         pthread_mutex_lock(&philo->r_fork);
@@ -39,13 +41,16 @@ void    loop_death(t_philo *philo)
 
 void    loop_meal(t_philo *philo)
 {
-    int i = 0;
-    long long life_time;
+    int i;
 
+    i = 0;
     philo->start = current_timestamp();
-    life_time = philo->data->time_to_die + current_timestamp();
-    while (life_time >= current_timestamp()&& i < philo->data->number_of_dishes)
+    while (philo->data->number_of_death == 0 && i < philo->data->number_of_dishes)
     {
+        if ((philo->last_think - philo->start || philo->last_meal - philo->start || philo->last_sleep - philo->start) < philo->data->time_to_die) {
+            philo->data->number_of_death += 1;
+            return;
+        }
         pthread_mutex_lock(&philo->l_fork);
         ft_status(philo, "has taken the left fork");
         pthread_mutex_lock(&philo->r_fork);
@@ -61,7 +66,6 @@ void    loop_meal(t_philo *philo)
         ft_status(philo, "is thinking");
         philo->last_think = current_timestamp();
         i++;
-        life_time++;
     }
 }
 
