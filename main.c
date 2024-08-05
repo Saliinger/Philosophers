@@ -19,9 +19,9 @@ int	main(int argc, char **argv)
 	t_philo	**philo;
 
 	if (argc < 5 || argc > 6)
-		return (printf("you need to use Philo properly\n"), 0);
+		return (printf("Error\nyou need to use Philo properly\n"), 0);
 	if (is_digit(argc, argv) == false)
-		return (printf("the settings are not digits\n"), 0);
+		return (printf("Error\nthe settings are not digits\n"), 0);
 	data = (t_data *)malloc(sizeof(t_data));
 	if (!data)
 		return (printf("Error\nmalloc data\n"), 0);
