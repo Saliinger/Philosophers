@@ -17,9 +17,23 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c45240e8-a6c5-41a5-8026-311a6e0c3e59" name="Changes" comment="change atoi to atol">
+    <list default="true" id="fcfa9733-c72e-42a8-b020-13a8b704032c" name="Changes" comment="add routine">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/routine.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/routine.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/philo.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/end.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/init_fork.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/init_philo.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/init_write.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/routine.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/start.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/thread.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/ft_atol.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/ft_free.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/init.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/utils.c" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +51,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Saliinger&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:Saliinger/Philosophers.git&quot;,
+    &quot;accountId&quot;: &quot;a7815867-8ce1-4ce7-8246-c90b8a37554b&quot;
+  }
+}</component>
   <component name="MakefileLocalSettings">
     <option name="availableProjects">
       <map>
@@ -64,48 +90,43 @@
       </map>
     </option>
   </component>
-  <component name="ProjectApplicationVersion">
-    <option name="ide" value="CLion" />
-    <option name="majorVersion" value="2024" />
-    <option name="minorVersion" value="1.4" />
-    <option name="productBranch" value="Classic" />
-  </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 2
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
 }</component>
-  <component name="ProjectId" id="2jumZuTG5Hxoe9QsPxUgqz1UR0c" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2k6vauD4ZdgD2clzIgeCWaCXjPY" />
   <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Native Application.all.executor&quot;: &quot;Debug&quot;,
+    &quot;Native Application.philo.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/anoukan/Desktop/test&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;CLionExternalConfigurable&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Native Application.all">
-    <configuration name="all" type="CLionNativeAppRunConfigurationType" PROGRAM_PARAMS="5 5 5 5" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Philosophers" TARGET_NAME="all" CONFIG_NAME="all" version="1" RUN_PATH="philo">
+  <component name="RunManager" selected="Native Application.philo">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="all" type="CLionNativeAppRunConfigurationType" PROGRAM_PARAMS="5 5 5 5" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Philosophers" TARGET_NAME="all" CONFIG_NAME="all" version="1" RUN_PATH="./philo">
       <method v="2">
         <option name="CLION.COMPOUND.BUILD" enabled="true" />
       </method>
@@ -115,7 +136,7 @@
         <option name="CLION.COMPOUND.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration name="philo" type="CLionNativeAppRunConfigurationType" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Philosophers" TARGET_NAME="philo" CONFIG_NAME="philo" version="1">
+    <configuration name="philo" type="CLionNativeAppRunConfigurationType" PROGRAM_PARAMS="5 5 5 5" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Philosophers" TARGET_NAME="philo" CONFIG_NAME="philo" version="1" RUN_PATH="./philo">
       <method v="2">
         <option name="CLION.COMPOUND.BUILD" enabled="true" />
       </method>
@@ -135,121 +156,43 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c45240e8-a6c5-41a5-8026-311a6e0c3e59" name="Changes" comment="" />
-      <created>1722245395587</created>
+      <changelist id="fcfa9733-c72e-42a8-b020-13a8b704032c" name="Changes" comment="" />
+      <created>1722616907743</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1722245395587</updated>
-      <workItem from="1722245396667" duration="714000" />
-      <workItem from="1722247860859" duration="6414000" />
-      <workItem from="1722260272847" duration="2780000" />
-      <workItem from="1722609391835" duration="22000" />
-      <workItem from="1722771164865" duration="7190000" />
-      <workItem from="1722841160992" duration="8269000" />
+      <updated>1722616907743</updated>
+      <workItem from="1722616908814" duration="2000" />
+      <workItem from="1722617096476" duration="30000" />
+      <workItem from="1722693013440" duration="2588000" />
+      <workItem from="1722762951286" duration="11017000" />
     </task>
-    <task id="LOCAL-00001" summary="lol">
+    <task id="LOCAL-00001" summary="add routine">
       <option name="closed" value="true" />
-      <created>1722247796305</created>
+      <created>1722699224903</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1722247796305</updated>
+      <updated>1722699224903</updated>
     </task>
-    <task id="LOCAL-00002" summary="add utils and data init">
-      <option name="closed" value="true" />
-      <created>1722253589515</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1722253589515</updated>
-    </task>
-    <task id="LOCAL-00003" summary="add utils and data init">
-      <option name="closed" value="true" />
-      <created>1722257057491</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1722257057491</updated>
-    </task>
-    <task id="LOCAL-00004" summary="add utils and data init">
-      <option name="closed" value="true" />
-      <created>1722266088592</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1722266088592</updated>
-    </task>
-    <task id="LOCAL-00005" summary="add init for fork + fix segfault by correcting bad alloc">
-      <option name="closed" value="true" />
-      <created>1722774236676</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1722774236676</updated>
-    </task>
-    <task id="LOCAL-00006" summary="add init for fork + fix segfault by correcting bad alloc">
-      <option name="closed" value="true" />
-      <created>1722781952165</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1722781952165</updated>
-    </task>
-    <task id="LOCAL-00007" summary="fix time stamp need to take care of death">
-      <option name="closed" value="true" />
-      <created>1722842005741</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1722842005741</updated>
-    </task>
-    <task id="LOCAL-00008" summary="add end of sim + write mutex + fix time stamp">
-      <option name="closed" value="true" />
-      <created>1722849300277</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1722849300277</updated>
-    </task>
-    <task id="LOCAL-00009" summary="add security for negative input">
-      <option name="closed" value="true" />
-      <created>1722852439704</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1722852439704</updated>
-    </task>
-    <task id="LOCAL-00010" summary="add error message">
-      <option name="closed" value="true" />
-      <created>1722852870141</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1722852870141</updated>
-    </task>
-    <task id="LOCAL-00011" summary="change atoi to atol">
-      <option name="closed" value="true" />
-      <created>1722852949234</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1722852949234</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="lol" />
-    <MESSAGE value="add utils and data init" />
-    <MESSAGE value="add init for fork + fix segfault by correcting bad alloc" />
-    <MESSAGE value="fix time stamp need to take care of death" />
-    <MESSAGE value="add end of sim + write mutex + fix time stamp" />
-    <MESSAGE value="add security for negative input" />
-    <MESSAGE value="add error message" />
-    <MESSAGE value="change atoi to atol" />
-    <option name="LAST_COMMIT_MESSAGE" value="change atoi to atol" />
+    <MESSAGE value="add routine" />
+    <option name="LAST_COMMIT_MESSAGE" value="add routine" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/sim/init_fork.c</url>
+          <line>14</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
