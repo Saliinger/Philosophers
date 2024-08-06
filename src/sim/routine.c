@@ -14,8 +14,6 @@
 
 void    loop_death(t_philo *philo)
 {
-
-    philo->start = current_timestamp();
     while (philo->data->number_of_death == 0)
     {
         if ((philo->last_think - philo->start || philo->last_meal - philo->start || philo->last_sleep - philo->start) < philo->data->time_to_die) {
@@ -41,11 +39,7 @@ void    loop_death(t_philo *philo)
 
 void    loop_meal(t_philo *philo)
 {
-    int i;
-
-    i = 0;
-    philo->start = current_timestamp();
-    while (philo->data->number_of_death == 0 && i < philo->data->number_of_dishes)
+    while (philo->data->number_of_death == 0 && 0 < philo->data->number_of_dishes--)
     {
         if ((philo->last_think - philo->start || philo->last_meal - philo->start || philo->last_sleep - philo->start) < philo->data->time_to_die) {
             philo->data->number_of_death += 1;
@@ -65,7 +59,6 @@ void    loop_meal(t_philo *philo)
         philo->last_sleep = current_timestamp();
         ft_status(philo, "is thinking");
         philo->last_think = current_timestamp();
-        i++;
     }
 }
 
@@ -76,7 +69,13 @@ void	*routine(void *arg)
 
 	philo = (t_philo *)arg;
 	data = philo->data;
-    if (data->number_of_dishes > 0) { loop_meal(philo); }
-    else { loop_death(philo); }
+    philo->start = current_timestamp();
+    philo->last_think = philo->start;
+    philo->last_meal = philo->start;
+    philo->last_sleep = philo->start;
+    if (data->number_of_dishes > 0)
+        loop_meal(philo);
+    else
+        loop_death(philo);
 	return (NULL);
 }
