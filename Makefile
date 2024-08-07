@@ -8,12 +8,11 @@ SRCD = ./src
 
 SRC =	$(UTILS)/ft_atol.c\
 		$(UTILS)/ft_free.c\
-		$(UTILS)/init.c\
+		$(UTILS)/init_data.c\
 		$(UTILS)/utils.c\
 		$(SIM)/init_philo.c\
-		$(SIM)/init_write.c\
 		$(SIM)/end.c\
-		$(SIM)/init_fork.c\
+		$(SIM)/init_mutex.c\
 		$(SIM)/routine.c\
 		$(SIM)/thread.c\
 		$(SIM)/start.c\
