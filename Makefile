@@ -17,6 +17,7 @@ SRC =	$(UTILS)/ft_atol.c\
 		$(SIM)/routine.c\
 		$(SIM)/thread.c\
 		$(SIM)/start.c\
+		$(SIM)/actions.c\
 		main.c
 
 OBJ =		$(SRC:.c=.o)

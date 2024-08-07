@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 19:13:21 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/01 16:49:29 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/07 16:13:33 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,11 @@ void				*routine(void *arg);
 void                thread(t_data *data, t_philo **philo_l);
 void                init_write(t_data *data, t_philo **philo);
 void                end(t_data *data, t_philo **philo);
+
+// Actions
+void	sleeping(t_philo *philo);
+void	thinkig(t_philo *philo);
+void	eat(t_philo *philo);
 
 // Utils
 int					ft_atoi(const char *str);
