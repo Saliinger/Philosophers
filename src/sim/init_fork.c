@@ -28,4 +28,9 @@ void	init_fork(t_data *data, t_philo **philo)
         }
 		i++;
 	}
+    if (pthread_mutex_init(&data->lock, NULL) != 0)
+    {
+        free(data->fork);
+        ft_free(data, philo, true);
+    }
 }

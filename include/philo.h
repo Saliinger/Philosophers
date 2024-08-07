@@ -30,6 +30,7 @@ typedef struct s_data
 	int				number_of_dishes;
     int             number_of_death;
 	pthread_mutex_t	*fork;
+    pthread_mutex_t lock;
     pthread_mutex_t *write;
 }					t_data;
 

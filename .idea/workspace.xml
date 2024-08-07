@@ -17,7 +17,13 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fcfa9733-c72e-42a8-b020-13a8b704032c" name="Changes" comment="add routine" />
+    <list default="true" id="fcfa9733-c72e-42a8-b020-13a8b704032c" name="Changes" comment="change fix all dying test need to check for the other">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/philo.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/philo.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/init_fork.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/init_fork.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/routine.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/routine.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/thread.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/thread.c" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -152,7 +158,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722699224903</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="change fix all dying test need to check for the other">
+      <option name="closed" value="true" />
+      <created>1722946865318</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1722946865318</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,17 +174,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add routine" />
-    <option name="LAST_COMMIT_MESSAGE" value="add routine" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/sim/init_fork.c</url>
-          <line>14</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="change fix all dying test need to check for the other" />
+    <option name="LAST_COMMIT_MESSAGE" value="change fix all dying test need to check for the other" />
   </component>
 </project>

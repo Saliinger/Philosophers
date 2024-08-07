@@ -19,6 +19,16 @@ void	thread(t_data *data, t_philo **philo_l)
 
 	i = 0;
 	philo = *philo_l;
+    while (i < data->number_of_philo) {
+        philo->start = current_timestamp();
+        philo->last_think = philo->start;
+        philo->last_meal = philo->start;
+        philo->last_sleep = philo->start;
+        i++;
+        philo = philo->next;
+    }
+	i = 0;
+	philo = *philo_l;
 	while (i < data->number_of_philo)
 	{
 		if (pthread_create(&philo->thread, NULL, routine, philo) != 0)
@@ -29,7 +39,7 @@ void	thread(t_data *data, t_philo **philo_l)
 		i++;
 		philo = philo->next;
 	}
-	i = 0;
+    i = 0;
 	philo = *philo_l;
 	while (i < data->number_of_philo)
 	{
