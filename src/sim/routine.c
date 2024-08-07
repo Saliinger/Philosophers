@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 22:02:31 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/07 16:14:30 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/07 16:17:58 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ void	loop_death(t_philo *philo)
 			pthread_mutex_unlock(&philo->data->lock);
 			return ;
 		}
-        eat(philo);
-        sleeping(philo);
-        thinking(philo);
+		eat(philo);
+		sleeping(philo);
+		thinking(philo);
 	}
 }
 
@@ -58,9 +58,9 @@ void	loop_meal(t_philo *philo)
 			pthread_mutex_unlock(&philo->data->lock);
 			return ;
 		}
-        eat(philo);
-        sleeping(philo);
-        thinking(philo);
+		eat(philo);
+		sleeping(philo);
+		thinking(philo);
 	}
 }
 

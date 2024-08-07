@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 16:09:47 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/07 16:12:19 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/07 16:18:34 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	eat(t_philo *philo)
 	philo->last_meal = current_timestamp();
 }
 
-void	thinkig(t_philo *philo)
+void	thinking(t_philo *philo)
 {
 	ft_status(philo, "is thinking");
 	philo->last_think = current_timestamp();

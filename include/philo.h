@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 19:13:21 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/07 16:13:33 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/07 16:18:20 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ typedef struct s_data
 	long long		time_to_eat;
 	long long		time_to_sleep;
 	int				number_of_dishes;
-    int             number_of_death;
+	int				number_of_death;
 	pthread_mutex_t	*fork;
-    pthread_mutex_t lock;
-    pthread_mutex_t *write;
+	pthread_mutex_t	lock;
+	pthread_mutex_t	*write;
 }					t_data;
 
 typedef struct s_philo
@@ -44,8 +44,8 @@ typedef struct s_philo
 	pthread_mutex_t	r_fork;
 	pthread_t		thread;
 	struct s_philo	*next;
-    struct s_data   *data;
-    long long       start;
+	struct s_data	*data;
+	long long		start;
 }					t_philo;
 
 // Sim
@@ -53,14 +53,14 @@ void				start(t_data *data, t_philo **philo);
 void				create_philo(t_philo **philo, t_data *data);
 void				init_fork(t_data *data, t_philo **philo);
 void				*routine(void *arg);
-void                thread(t_data *data, t_philo **philo_l);
-void                init_write(t_data *data, t_philo **philo);
-void                end(t_data *data, t_philo **philo);
+void				thread(t_data *data, t_philo **philo_l);
+void				init_write(t_data *data, t_philo **philo);
+void				end(t_data *data, t_philo **philo);
 
 // Actions
-void	sleeping(t_philo *philo);
-void	thinkig(t_philo *philo);
-void	eat(t_philo *philo);
+void				sleeping(t_philo *philo);
+void				thinking(t_philo *philo);
+void				eat(t_philo *philo);
 
 // Utils
 int					ft_atoi(const char *str);
