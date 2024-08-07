@@ -1,6 +1,6 @@
 NAME = philo
-CFLAGS = -Wall -Wextra -Werror -pthread -I./include/
-DEBUG = -g3 #-fsanitize=address
+CFLAGS += -Wall -Wextra -Werror -pthread -I./include/
+DEBUG += -g3 #-fsanitize=address
 CC = cc
 UTILS = ./src/utils
 SIM = ./src/sim
