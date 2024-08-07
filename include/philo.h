@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 19:13:21 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/07 16:31:24 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/07 16:56:51 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct s_data
 	int				number_of_death;
 	pthread_mutex_t	*fork;
 	pthread_mutex_t	lock;
-	pthread_mutex_t	*write;
+	pthread_mutex_t	write;
 }					t_data;
 
 typedef struct s_philo
@@ -51,10 +51,9 @@ typedef struct s_philo
 // Sim
 void				start(t_data *data, t_philo **philo);
 void				create_philo(t_philo **philo, t_data *data);
-void				init_fork(t_data *data, t_philo **philo);
+void				init_mutex(t_data *data, t_philo **philo);
 void				*routine(void *arg);
 void				thread(t_data *data, t_philo **philo_l);
-void				init_write(t_data *data, t_philo **philo);
 void				end(t_data *data, t_philo **philo);
 
 // Actions
@@ -72,4 +71,3 @@ void				ft_print(t_philo **philo);
 bool				is_digit(int ac, char **av);
 
 #endif
-	
