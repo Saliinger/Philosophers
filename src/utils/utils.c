@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 19:13:14 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/01 16:52:03 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/07 16:05:38 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ long long	current_timestamp(void)
 
 void	ft_status(t_philo *philo, char *str)
 {
-    pthread_mutex_lock(philo->data->write);
+	pthread_mutex_lock(philo->data->write);
 	printf("%lld %d %s\n", current_timestamp() - philo->start, philo->id, str);
-    pthread_mutex_unlock(philo->data->write);
+	pthread_mutex_unlock(philo->data->write);
 }
 
 bool	is_digit(int ac, char **av)
@@ -47,7 +47,8 @@ bool	is_digit(int ac, char **av)
 		j = 0;
 		while (av[i][j])
 		{
-			if ((av[i][j] >= '0' && av[i][j] <= '9') || (av[i][j] == '-' || av[i][j] == '+'))
+			if ((av[i][j] >= '0' && av[i][j] <= '9') || (av[i][j] == '-'
+					|| av[i][j] == '+'))
 				j++;
 			else
 				return (false);

@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 19:12:56 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/30 19:12:57 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/07 16:05:50 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,12 @@ static void	free_philo(t_philo **philo)
 
 void	ft_free(t_data *data, t_philo **philo, bool fail)
 {
-
 	if (philo)
 		free_philo(philo);
 	if (data)
 		free(data);
-    if (fail == true)
-        exit(EXIT_FAILURE);
-    else
-        exit(EXIT_SUCCESS);
+	if (fail == true)
+		exit(EXIT_FAILURE);
+	else
+		exit(EXIT_SUCCESS);
 }
