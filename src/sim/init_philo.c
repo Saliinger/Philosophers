@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 19:13:03 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/07 17:30:56 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/08 11:58:21 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 static void	fork_philo(t_data *data, t_philo *new, int index)
 {
-	if (data->number_of_philo == 1) {
-        new->l_fork = data->fork[0];
-        new->has_a_r_fork = false;
-    }
+	if (data->number_of_philo == 1)
+	{
+		new->l_fork = data->fork[0];
+		new->has_a_r_fork = false;
+	}
 	else
 	{
 		new->l_fork = data->fork[index];
-
 		if (index != data->number_of_philo - 1)
 			new->r_fork = data->fork[index + 1];
 		else
 			new->r_fork = data->fork[0];
-        new->has_a_r_fork = true;
+		new->has_a_r_fork = true;
 	}
 }
 

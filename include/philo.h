@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 19:13:21 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/07 16:56:51 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/08 11:58:16 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ typedef struct s_philo
 	struct s_philo	*next;
 	struct s_data	*data;
 	long long		start;
-    bool            has_a_r_fork;
+	bool			has_a_r_fork;
 }					t_philo;
 
 // Sim

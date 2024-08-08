@@ -6,13 +6,13 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 15:52:41 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/07 16:05:56 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/08 12:11:30 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	thread(t_data *data, t_philo **philo_l)
+static void	init_time(t_philo **philo_l, t_data *data)
 {
 	int		i;
 	t_philo	*philo;
@@ -28,6 +28,13 @@ void	thread(t_data *data, t_philo **philo_l)
 		i++;
 		philo = philo->next;
 	}
+}
+
+static void	init_thread(t_philo **philo_l, t_data *data)
+{
+	int		i;
+	t_philo	*philo;
+
 	i = 0;
 	philo = *philo_l;
 	while (i < data->number_of_philo)
@@ -40,6 +47,13 @@ void	thread(t_data *data, t_philo **philo_l)
 		i++;
 		philo = philo->next;
 	}
+}
+
+static void	init_join(t_philo **philo_l, t_data *data)
+{
+	int		i;
+	t_philo	*philo;
+
 	i = 0;
 	philo = *philo_l;
 	while (i < data->number_of_philo)
@@ -52,4 +66,11 @@ void	thread(t_data *data, t_philo **philo_l)
 		i++;
 		philo = philo->next;
 	}
+}
+
+void	thread(t_data *data, t_philo **philo_l)
+{
+	init_time(philo_l, data);
+	init_thread(philo_l, data);
+	init_join(philo_l, data);
 }
