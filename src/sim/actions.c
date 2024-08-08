@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 16:09:47 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/07 16:18:34 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/07 17:32:16 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,14 @@
 
 void	eat(t_philo *philo)
 {
-	pthread_mutex_lock(&philo->l_fork);
+	if (pthread_mutex_lock(&philo->l_fork) != 0)
+		return ;
 	ft_status(philo, "has taken the left fork");
-	pthread_mutex_lock(&philo->r_fork);
+	if (pthread_mutex_lock(&philo->r_fork) != 0)
+	{
+		pthread_mutex_unlock(&philo->l_fork);
+		return ;
+	}
 	ft_status(philo, "has taken the right fork");
 	ft_status(philo, "is eating");
 	usleep(philo->data->time_to_eat * 1000);
