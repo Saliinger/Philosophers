@@ -16,13 +16,17 @@ void	eat(t_philo *philo)
 {
 	if (pthread_mutex_lock(&philo->l_fork) != 0)
 		return ;
-	else
-		ft_status(philo, "has taken a fork");
-	if (philo->has_a_r_fork == false && pthread_mutex_lock(&philo->r_fork) != 0)
-	{
-		pthread_mutex_unlock(&philo->l_fork);
-		return ;
-	}
+    ft_status(philo, "has taken a fork");
+    if (philo->data->number_of_philo > 1)
+    {
+        if (philo->has_a_r_fork == false || pthread_mutex_lock(&philo->r_fork) != 0)
+        {
+            pthread_mutex_unlock(&philo->l_fork);
+            return ;
+        }
+    }
+    else
+        return;
 	ft_status(philo, "has taken a fork");
 	ft_status(philo, "is eating");
 	usleep(philo->data->time_to_eat * 1000);

@@ -17,11 +17,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fcfa9733-c72e-42a8-b020-13a8b704032c" name="Changes" comment="test fix 1 800 200 200 philo is supposed to die">
+    <list default="true" id="fcfa9733-c72e-42a8-b020-13a8b704032c" name="Changes" comment="add rfork checker">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/philo.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/philo.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/actions.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/actions.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/init_philo.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/init_philo.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +170,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723039417834</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add rfork checker">
+      <option name="closed" value="true" />
+      <created>1723110840929</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1723110840929</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,6 +188,7 @@
     <MESSAGE value="add routine" />
     <MESSAGE value="change fix all dying test need to check for the other" />
     <MESSAGE value="test fix 1 800 200 200 philo is supposed to die" />
-    <option name="LAST_COMMIT_MESSAGE" value="test fix 1 800 200 200 philo is supposed to die" />
+    <MESSAGE value="add rfork checker" />
+    <option name="LAST_COMMIT_MESSAGE" value="add rfork checker" />
   </component>
 </project>
