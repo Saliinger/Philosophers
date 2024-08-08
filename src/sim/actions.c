@@ -17,7 +17,7 @@ void	eat(t_philo *philo)
 	if (pthread_mutex_lock(&philo->l_fork) != 0)
 		return ;
 	ft_status(philo, "has taken the left fork");
-	if (pthread_mutex_lock(&philo->r_fork) != 0)
+	if (philo->has_a_r_fork == false || pthread_mutex_lock(&philo->r_fork) != 0)
 	{
 		pthread_mutex_unlock(&philo->l_fork);
 		return ;

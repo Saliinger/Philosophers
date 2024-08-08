@@ -18,11 +18,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fcfa9733-c72e-42a8-b020-13a8b704032c" name="Changes" comment="test fix 1 800 200 200 philo is supposed to die">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/philo.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/philo.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sim/actions.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/actions.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/init_mutex.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/init_mutex.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sim/init_philo.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/init_philo.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/routine.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/routine.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/start.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/start.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -14,15 +14,19 @@
 
 static void	fork_philo(t_data *data, t_philo *new, int index)
 {
-	if (data->number_of_philo == 1)
-		new->l_fork = data->fork[0];
+	if (data->number_of_philo == 1) {
+        new->l_fork = data->fork[0];
+        new->has_a_r_fork = false;
+    }
 	else
 	{
 		new->l_fork = data->fork[index];
+
 		if (index != data->number_of_philo - 1)
 			new->r_fork = data->fork[index + 1];
 		else
 			new->r_fork = data->fork[0];
+        new->has_a_r_fork = true;
 	}
 }
 

@@ -46,6 +46,7 @@ typedef struct s_philo
 	struct s_philo	*next;
 	struct s_data	*data;
 	long long		start;
+    bool            has_a_r_fork;
 }					t_philo;
 
 // Sim
