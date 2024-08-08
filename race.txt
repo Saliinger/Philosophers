@@ -1,0 +1,62 @@
+WARNING: ThreadSanitizer: unlock of an unlocked mutex (or by a wrong thread) (pid=2124367)
+    #0 pthread_mutex_unlock <null> (philo+0x467b86)
+    #1 eat <null> (philo+0x4ba9f3)
+
+  Location is heap block of size 152 at 0x7b2800000000 allocated by main thread:
+    #0 malloc <null> (philo+0x44841b)
+    #1 new_philo <null> (philo+0x4ba0cc)
+
+  Mutex M10 (0x7b2800000048) created at:
+    #0 pthread_mutex_unlock <null> (philo+0x467b86)
+    #1 eat <null> (philo+0x4ba9f3)
+
+SUMMARY: ThreadSanitizer: unlock of an unlocked mutex (or by a wrong thread) (/home/anoukan/Desktop/Philosophers/philo+0x467b86) in pthread_mutex_unlock
+==================
+219 1 is sleeping
+==================
+WARNING: ThreadSanitizer: unlock of an unlocked mutex (or by a wrong thread) (pid=2124367)
+    #0 pthread_mutex_unlock <null> (philo+0x467b86)
+    #1 eat <null> (philo+0x4ba9f3)
+
+  Location is heap block of size 152 at 0x7b28000000a0 allocated by main thread:
+    #0 malloc <null> (philo+0x44841b)
+    #1 new_philo <null> (philo+0x4ba0cc)
+
+  Mutex M11 (0x7b28000000e8) created at:
+    #0 pthread_mutex_unlock <null> (philo+0x467b86)
+    #1 eat <null> (philo+0x4ba9f3)
+
+SUMMARY: ThreadSanitizer: unlock of an unlocked mutex (or by a wrong thread) (/home/anoukan/Desktop/Philosophers/philo+0x467b86) in pthread_mutex_unlock
+==================
+219 2 is sleeping
+==================
+WARNING: ThreadSanitizer: unlock of an unlocked mutex (or by a wrong thread) (pid=2124367)
+    #0 pthread_mutex_unlock <null> (philo+0x467b86)
+    #1 eat <null> (philo+0x4ba9f3)
+
+  Location is heap block of size 152 at 0x7b2800000140 allocated by main thread:
+    #0 malloc <null> (philo+0x44841b)
+    #1 new_philo <null> (philo+0x4ba0cc)
+
+  Mutex M12 (0x7b2800000188) created at:
+    #0 pthread_mutex_unlock <null> (philo+0x467b86)
+    #1 eat <null> (philo+0x4ba9f3)
+
+SUMMARY: ThreadSanitizer: unlock of an unlocked mutex (or by a wrong thread) (/home/anoukan/Desktop/Philosophers/philo+0x467b86) in pthread_mutex_unlock
+==================
+219 3 is sleeping
+==================
+WARNING: ThreadSanitizer: unlock of an unlocked mutex (or by a wrong thread) (pid=2124367)
+    #0 pthread_mutex_unlock <null> (philo+0x467b86)
+    #1 eat <null> (philo+0x4ba9f3)
+
+  Location is heap block of size 152 at 0x7b28000001e0 allocated by main thread:
+    #0 malloc <null> (philo+0x44841b)
+    #1 new_philo <null> (philo+0x4ba0cc)
+
+  Mutex M13 (0x7b2800000228) created at:
+    #0 pthread_mutex_unlock <null> (philo+0x467b86)
+    #1 eat <null> (philo+0x4ba9f3)
+
+SUMMARY: ThreadSanitizer: unlock of an unlocked mutex (or by a wrong thread) (/home/anoukan/Desktop/Philosophers/philo+0x467b86) in pthread_mutex_unlock
+==================
