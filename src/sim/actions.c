@@ -14,24 +14,14 @@
 
 void	eat(t_philo *philo)
 {
-	if (pthread_mutex_lock(&philo->l_fork) != 0)
-		return ;
+	pthread_mutex_lock(philo->l_fork);
     ft_status(philo, "has taken a fork");
-    if (philo->data->number_of_philo > 1)
-    {
-        if (philo->has_a_r_fork == false || pthread_mutex_lock(&philo->r_fork) != 0)
-        {
-            pthread_mutex_unlock(&philo->l_fork);
-            return ;
-        }
-    }
-    else
-        return;
-	ft_status(philo, "has taken a fork");
+    pthread_mutex_lock(philo->r_fork);
+    ft_status(philo, "has taken a fork");
 	ft_status(philo, "is eating");
 	usleep(philo->data->time_to_eat * 1000);
-	pthread_mutex_unlock(&philo->l_fork);
-	pthread_mutex_unlock(&philo->r_fork);
+	pthread_mutex_unlock(philo->l_fork);
+	pthread_mutex_unlock(philo->r_fork);
 	philo->last_meal = current_timestamp();
 }
 

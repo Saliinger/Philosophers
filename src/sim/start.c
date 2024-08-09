@@ -18,6 +18,5 @@ void	start(t_data *data, t_philo **philo)
 	init_mutex(data, philo);
 	create_philo(philo, data);
 	thread(data, philo);
-	printf("uo");
 	end(data, philo);
 }

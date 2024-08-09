@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_philo.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anoukan <anoukan@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/30 19:13:03 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/08 11:58:21 by anoukan          ###   ########.fr       */
+/*   Created: 2024/08/09 11:05:16 by anoukan           #+#    #+#             */
+/*   Updated: 2024/08/09 11:05:54 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,17 @@ static void	fork_philo(t_data *data, t_philo *new, int index)
 {
 	if (data->number_of_philo == 1)
 	{
-		new->l_fork = data->fork[0];
+		new->l_fork = &data->fork[0];
 		new->has_a_r_fork = false;
+        new->r_fork = NULL;
 	}
 	else
 	{
-		new->l_fork = data->fork[index];
+		new->l_fork = &data->fork[index];
 		if (index != data->number_of_philo - 1)
-			new->r_fork = data->fork[index + 1];
+			new->r_fork = &data->fork[index + 1];
 		else
-			new->r_fork = data->fork[0];
+			new->r_fork = &data->fork[0];
 		new->has_a_r_fork = true;
 	}
 }
@@ -37,7 +38,7 @@ static void	new_philo(t_data *data, t_philo **philo, int index)
 
 	new = (t_philo *)malloc(sizeof(t_philo));
 	if (!new)
-		return ;
+		ft_free(data, philo, true);
 	new->next = NULL;
 	new->id = index + 1;
 	fork_philo(data, new, index);

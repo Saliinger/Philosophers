@@ -16,19 +16,11 @@ void	loop_death(t_philo *philo)
 {
 	while (philo->data->number_of_death == 0)
 	{
-		if (current_timestamp() > philo->data->time_to_die + philo->last_think
-			|| current_timestamp() > philo->data->time_to_die + philo->last_meal
-			|| philo->last_sleep > philo->data->time_to_die + philo->last_sleep)
-		{
-			pthread_mutex_lock(&philo->data->lock);
-			philo->data->number_of_death += 1;
-			pthread_mutex_unlock(&philo->data->lock);
-			return ;
-		}
 		eat(philo);
 		sleeping(philo);
 		thinking(philo);
 	}
+    return;
 }
 
 void	loop_meal(t_philo *philo)
@@ -39,19 +31,11 @@ void	loop_meal(t_philo *philo)
 	while (philo->data->number_of_death == 0
 		&& i++ < philo->data->number_of_dishes)
 	{
-		if (current_timestamp() > philo->data->time_to_die + philo->last_think
-			|| current_timestamp() > philo->data->time_to_die + philo->last_meal
-			|| philo->last_sleep > philo->data->time_to_die + philo->last_sleep)
-		{
-			pthread_mutex_lock(&philo->data->lock);
-			philo->data->number_of_death += 1;
-			pthread_mutex_unlock(&philo->data->lock);
-			return ;
-		}
 		eat(philo);
 		sleeping(philo);
 		thinking(philo);
 	}
+    return;
 }
 
 void	*routine(void *arg)

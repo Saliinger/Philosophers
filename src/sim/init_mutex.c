@@ -25,7 +25,7 @@ void	init_mutex(t_data *data, t_philo **philo)
 	int	i;
 
 	i = 0;
-	data->fork = malloc(data->number_of_philo * sizeof(pthread_mutex_t) + 1);
+	data->fork = malloc(data->number_of_philo * sizeof(pthread_mutex_t));
 	if (!data->fork)
 		ft_free(data, philo, true);
 	while (i < data->number_of_philo)

@@ -16,15 +16,17 @@ static void	init_time(t_philo **philo_l, t_data *data)
 {
 	int		i;
 	t_philo	*philo;
+    long long time;
 
 	i = 0;
 	philo = *philo_l;
+    time = current_timestamp();
 	while (i < data->number_of_philo)
 	{
-		philo->start = current_timestamp();
-		philo->last_think = philo->start;
-		philo->last_meal = philo->start;
-		philo->last_sleep = philo->start;
+		philo->start = time;
+		philo->last_think = time;
+		philo->last_meal = time;
+		philo->last_sleep = time;
 		i++;
 		philo = philo->next;
 	}
@@ -32,40 +34,44 @@ static void	init_time(t_philo **philo_l, t_data *data)
 
 static void	init_thread(t_philo **philo_l, t_data *data)
 {
-	int		i;
 	t_philo	*philo;
 
-	i = 0;
 	philo = *philo_l;
-	while (i < data->number_of_philo)
+	while (philo)
 	{
 		if (pthread_create(&philo->thread, NULL, routine, philo) != 0)
 		{
 			printf("Error\nthe creation of the thread has fail\n");
 			ft_free(data, philo_l, true);
 		}
-		i++;
 		philo = philo->next;
 	}
+    if (pthread_create(&data->monitor, NULL, monitor, philo) != 0)
+    {
+        printf("Error\nthe creation of the thread has fail\n");
+        ft_free(data, philo_l, true);
+    }
 }
 
 static void	init_join(t_philo **philo_l, t_data *data)
 {
-	int		i;
 	t_philo	*philo;
 
-	i = 0;
 	philo = *philo_l;
-	while (i < data->number_of_philo)
+	while (philo)
 	{
 		if (pthread_join(philo->thread, NULL) != 0)
 		{
 			printf("Error\nthe joining of the thread has fail\n");
 			ft_free(data, philo_l, true);
 		}
-		i++;
 		philo = philo->next;
 	}
+    if (pthread_join(data->monitor, NULL) != 0)
+    {
+        printf("Error\nthe joining of the thread has fail\n");
+        ft_free(data, philo_l, true);
+    }
 }
 
 void	thread(t_data *data, t_philo **philo_l)

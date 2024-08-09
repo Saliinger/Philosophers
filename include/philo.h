@@ -29,6 +29,7 @@ typedef struct s_data
 	long long		time_to_sleep;
 	int				number_of_dishes;
 	int				number_of_death;
+    pthread_t       monitor;
 	pthread_mutex_t	*fork;
 	pthread_mutex_t	lock;
 	pthread_mutex_t	write;
@@ -40,8 +41,8 @@ typedef struct s_philo
 	long long		last_meal;
 	long long		last_sleep;
 	long long		last_think;
-	pthread_mutex_t	l_fork;
-	pthread_mutex_t	r_fork;
+	pthread_mutex_t	*l_fork;
+	pthread_mutex_t	*r_fork;
 	pthread_t		thread;
 	struct s_philo	*next;
 	struct s_data	*data;
@@ -56,6 +57,7 @@ void				init_mutex(t_data *data, t_philo **philo);
 void				*routine(void *arg);
 void				thread(t_data *data, t_philo **philo_l);
 void				end(t_data *data, t_philo **philo);
+void                *monitor(void *arg);
 
 // Actions
 void				sleeping(t_philo *philo);
