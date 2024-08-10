@@ -18,7 +18,7 @@ static void	fork_philo(t_data *data, t_philo *new, int index)
 	{
 		new->l_fork = &data->fork[0];
 		new->has_a_r_fork = false;
-        new->r_fork = NULL;
+        new->r_fork = &data->fork[0];
 	}
 	else
 	{
