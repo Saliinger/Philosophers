@@ -17,11 +17,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fcfa9733-c72e-42a8-b020-13a8b704032c" name="Changes" comment="remake fork now when fork doesn't exist it's NULL so might fix other issue like fork's dup">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sim/monitor.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/monitor.c" afterDir="false" />
-    </list>
+    <list default="true" id="fcfa9733-c72e-42a8-b020-13a8b704032c" name="Changes" comment="fix everything philo termine" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -150,7 +146,7 @@
       <workItem from="1722617096476" duration="30000" />
       <workItem from="1722693013440" duration="2588000" />
       <workItem from="1722762951286" duration="11017000" />
-      <workItem from="1723199222414" duration="8410000" />
+      <workItem from="1723199222414" duration="9214000" />
     </task>
     <task id="LOCAL-00001" summary="add routine">
       <option name="closed" value="true" />
@@ -192,7 +188,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723216188974</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fix everything philo termine">
+      <option name="closed" value="true" />
+      <created>1723276519857</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1723276519857</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,7 +208,8 @@
     <MESSAGE value="test fix 1 800 200 200 philo is supposed to die" />
     <MESSAGE value="add rfork checker" />
     <MESSAGE value="remake fork now when fork doesn't exist it's NULL so might fix other issue like fork's dup" />
-    <option name="LAST_COMMIT_MESSAGE" value="remake fork now when fork doesn't exist it's NULL so might fix other issue like fork's dup" />
+    <MESSAGE value="fix everything philo termine" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix everything philo termine" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
