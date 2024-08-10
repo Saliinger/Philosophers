@@ -17,8 +17,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fcfa9733-c72e-42a8-b020-13a8b704032c" name="Changes" comment="fix everything philo termine">
+    <list default="true" id="fcfa9733-c72e-42a8-b020-13a8b704032c" name="Changes" comment="fix one philo still stuck">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/philo.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/philo.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sim/init_philo.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/init_philo.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -149,7 +150,7 @@
       <workItem from="1722617096476" duration="30000" />
       <workItem from="1722693013440" duration="2588000" />
       <workItem from="1722762951286" duration="11017000" />
-      <workItem from="1723199222414" duration="10641000" />
+      <workItem from="1723199222414" duration="13558000" />
     </task>
     <task id="LOCAL-00001" summary="add routine">
       <option name="closed" value="true" />
@@ -199,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723276519857</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fix one philo still stuck">
+      <option name="closed" value="true" />
+      <created>1723280250145</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1723280250145</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,14 +221,15 @@
     <MESSAGE value="add rfork checker" />
     <MESSAGE value="remake fork now when fork doesn't exist it's NULL so might fix other issue like fork's dup" />
     <MESSAGE value="fix everything philo termine" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix everything philo termine" />
+    <MESSAGE value="fix one philo still stuck" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix one philo still stuck" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/sim/init_philo.c</url>
-          <line>65</line>
+          <line>63</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 19:13:21 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/08 11:58:16 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/10 16:28:02 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_data
 	long long		time_to_sleep;
 	int				number_of_dishes;
 	int				number_of_death;
-    pthread_t       monitor;
+	pthread_t		monitor;
 	pthread_mutex_t	*fork;
 	pthread_mutex_t	lock;
 	pthread_mutex_t	write;
@@ -47,7 +47,6 @@ typedef struct s_philo
 	struct s_philo	*next;
 	struct s_data	*data;
 	long long		start;
-	bool			has_a_r_fork;
 }					t_philo;
 
 // Sim
@@ -57,7 +56,7 @@ void				init_mutex(t_data *data, t_philo **philo);
 void				*routine(void *arg);
 void				thread(t_data *data, t_philo **philo_l);
 void				end(t_data *data, t_philo **philo);
-void                *monitor(void *arg);
+void				*monitor(void *arg);
 
 // Actions
 void				sleeping(t_philo *philo);

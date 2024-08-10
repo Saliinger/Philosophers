@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 15:52:41 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/08 12:11:30 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/10 16:27:37 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 static void	init_time(t_philo **philo_l, t_data *data)
 {
-	int		i;
-	t_philo	*philo;
-    long long time;
+	int			i;
+	t_philo		*philo;
+	long long	time;
 
 	i = 0;
 	philo = *philo_l;
-    time = current_timestamp();
+	time = current_timestamp();
 	while (i < data->number_of_philo)
 	{
 		philo->start = time;
@@ -46,11 +46,11 @@ static void	init_thread(t_philo **philo_l, t_data *data)
 		}
 		philo = philo->next;
 	}
-    if (pthread_create(&data->monitor, NULL, monitor, *philo_l) != 0)
-    {
-        printf("Error\nthe creation of the thread has fail\n");
-        ft_free(data, philo_l, true);
-    }
+	if (pthread_create(&data->monitor, NULL, monitor, *philo_l) != 0)
+	{
+		printf("Error\nthe creation of the thread has fail\n");
+		ft_free(data, philo_l, true);
+	}
 }
 
 static void	init_join(t_philo **philo_l, t_data *data)
@@ -67,11 +67,11 @@ static void	init_join(t_philo **philo_l, t_data *data)
 		}
 		philo = philo->next;
 	}
-    if (pthread_join(data->monitor, NULL) != 0)
-    {
-        printf("Error\nthe joining of the thread has fail\n");
-        ft_free(data, philo_l, true);
-    }
+	if (pthread_join(data->monitor, NULL) != 0)
+	{
+		printf("Error\nthe joining of the thread has fail\n");
+		ft_free(data, philo_l, true);
+	}
 }
 
 void	thread(t_data *data, t_philo **philo_l)

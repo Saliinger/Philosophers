@@ -6,44 +6,44 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 22:02:31 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/07 17:15:33 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/10 16:27:32 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-static bool first_turn(t_data *data)
+static bool	first_turn(t_data *data)
 {
-    static int nbr_p = 0;
+	static int	nbr_p = 0;
 
-    if (nbr_p == data->number_of_philo)
-        return true;
-    else
-        nbr_p++;
-    return false;
+	if (nbr_p == data->number_of_philo)
+		return (true);
+	else
+		nbr_p++;
+	return (false);
 }
 
 void	loop_death(t_philo *philo)
 {
 	while (philo->data->number_of_death == 0)
 	{
-        if (first_turn(philo->data) == false)
-        {
-            if (philo->id % 2 == 0)
-                eat(philo);
-        }
-        else
-            eat(philo);
-        if (philo->data->number_of_death > 0)
-            break;
+		if (first_turn(philo->data) == false)
+		{
+			if (philo->id % 2 == 0)
+				eat(philo);
+		}
+		else
+			eat(philo);
+		if (philo->data->number_of_death > 0)
+			break ;
 		sleeping(philo);
-        if (philo->data->number_of_death > 0)
-            break;
+		if (philo->data->number_of_death > 0)
+			break ;
 		thinking(philo);
-        if (philo->data->number_of_death > 0)
-            break;
+		if (philo->data->number_of_death > 0)
+			break ;
 	}
-    return;
+	return ;
 }
 
 void	loop_meal(t_philo *philo)
@@ -54,23 +54,23 @@ void	loop_meal(t_philo *philo)
 	while (philo->data->number_of_death == 0
 		&& i++ < philo->data->number_of_dishes)
 	{
-        if (first_turn(philo->data) == false)
-        {
-            if (philo->id % 2 == 0)
-                eat(philo);
-        }
-        else
-            eat(philo);
-        if (philo->data->number_of_death > 0)
-            break;
+		if (first_turn(philo->data) == false)
+		{
+			if (philo->id % 2 == 0)
+				eat(philo);
+		}
+		else
+			eat(philo);
+		if (philo->data->number_of_death > 0)
+			break ;
 		sleeping(philo);
-        if (philo->data->number_of_death > 0)
-            break;
+		if (philo->data->number_of_death > 0)
+			break ;
 		thinking(philo);
-        if (philo->data->number_of_death > 0)
-            break;
+		if (philo->data->number_of_death > 0)
+			break ;
 	}
-    return;
+	return ;
 }
 
 void	*routine(void *arg)

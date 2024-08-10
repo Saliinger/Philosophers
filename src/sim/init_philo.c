@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_philo.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoukan <anoukan@student.42mulhouse.fr>    +#+  +:+       +#+        */
+/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 11:05:16 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/09 11:05:54 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/10 16:27:26 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@ static void	fork_philo(t_data *data, t_philo *new, int index)
 	if (data->number_of_philo == 1)
 	{
 		new->l_fork = &data->fork[0];
-		new->has_a_r_fork = false;
-        new->r_fork = &data->fork[0];
+		new->r_fork = &data->fork[0];
 	}
 	else
 	{
@@ -27,7 +26,6 @@ static void	fork_philo(t_data *data, t_philo *new, int index)
 			new->r_fork = &data->fork[index + 1];
 		else
 			new->r_fork = &data->fork[0];
-		new->has_a_r_fork = true;
 	}
 }
 
