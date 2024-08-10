@@ -6,11 +6,21 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 16:27:58 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/10 16:28:00 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/10 23:18:25 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
+
+static void	exit_m(t_data *data, t_philo *philo)
+{
+	pthread_mutex_lock(&data->lock);
+	data->number_of_death += 1;
+	ft_status(philo, "died");
+	pthread_mutex_unlock(&data->lock);
+	if (data->number_of_philo == 1)
+		pthread_mutex_unlock(philo->l_fork);
+}
 
 void	*monitor(void *arg)
 {
@@ -28,10 +38,7 @@ void	*monitor(void *arg)
 			current_time = current_timestamp();
 			if (current_time > data->time_to_die + philo->last_meal)
 			{
-				pthread_mutex_lock(&data->lock);
-				data->number_of_death += 1;
-				ft_status(philo, "died");
-				pthread_mutex_unlock(&data->lock);
+				exit_m(data, philo);
 				return (NULL);
 			}
 			philo = philo->next;
