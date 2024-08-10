@@ -13,6 +13,7 @@ SRC =	$(UTILS)/ft_atol.c\
 		$(SIM)/init_philo.c\
 		$(SIM)/end.c\
 		$(SIM)/init_mutex.c\
+		$(SIM)/monitor.c\
 		$(SIM)/routine.c\
 		$(SIM)/thread.c\
 		$(SIM)/start.c\

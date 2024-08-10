@@ -12,13 +12,36 @@
 
 #include "philo.h"
 
+static bool first_turn(t_data *data)
+{
+    static int nbr_p = 0;
+
+    if (nbr_p == data->number_of_philo)
+        return true;
+    else
+        nbr_p++;
+    return false;
+}
+
 void	loop_death(t_philo *philo)
 {
 	while (philo->data->number_of_death == 0)
 	{
-		eat(philo);
+        if (first_turn(philo->data) == false)
+        {
+            if (philo->id % 2 == 0)
+                eat(philo);
+        }
+        else
+            eat(philo);
+        if (philo->data->number_of_death > 0)
+            break;
 		sleeping(philo);
+        if (philo->data->number_of_death > 0)
+            break;
 		thinking(philo);
+        if (philo->data->number_of_death > 0)
+            break;
 	}
     return;
 }
@@ -31,9 +54,21 @@ void	loop_meal(t_philo *philo)
 	while (philo->data->number_of_death == 0
 		&& i++ < philo->data->number_of_dishes)
 	{
-		eat(philo);
+        if (first_turn(philo->data) == false)
+        {
+            if (philo->id % 2 == 0)
+                eat(philo);
+        }
+        else
+            eat(philo);
+        if (philo->data->number_of_death > 0)
+            break;
 		sleeping(philo);
+        if (philo->data->number_of_death > 0)
+            break;
 		thinking(philo);
+        if (philo->data->number_of_death > 0)
+            break;
 	}
     return;
 }

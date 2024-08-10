@@ -46,7 +46,7 @@ static void	init_thread(t_philo **philo_l, t_data *data)
 		}
 		philo = philo->next;
 	}
-    if (pthread_create(&data->monitor, NULL, monitor, philo) != 0)
+    if (pthread_create(&data->monitor, NULL, monitor, *philo_l) != 0)
     {
         printf("Error\nthe creation of the thread has fail\n");
         ft_free(data, philo_l, true);
