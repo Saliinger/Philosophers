@@ -14,8 +14,6 @@
 
 static void	error_mutex(t_data *data, t_philo **philo)
 {
-	if (data->fork)
-		free(data->fork);
 	printf("Error\nthe mutex init didn't go through\n");
 	ft_free(data, philo, true);
 }
