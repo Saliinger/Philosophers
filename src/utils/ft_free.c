@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 19:12:56 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/11 12:48:39 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/11 15:58:52 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@ static void	free_philo(t_philo **philo)
 {
 	t_philo	*temp;
 
+	if (!philo || !*philo)
+		return ;
 	temp = *philo;
 	while (*philo)
 	{
-		temp = temp->next;
+		temp = (*philo)->next;
 		free(*philo);
 		*philo = temp;
 	}

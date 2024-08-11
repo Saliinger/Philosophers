@@ -18,8 +18,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fcfa9733-c72e-42a8-b020-13a8b704032c" name="Changes" comment="fix one philo still stuck">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/philo.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/philo.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/actions.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/actions.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/end.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/end.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/init_philo.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/init_philo.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/routine.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/routine.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/start.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/start.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sim/thread.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/sim/thread.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/ft_free.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/ft_free.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/init_data.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/init_data.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/utils.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +161,7 @@
       <workItem from="1722693013440" duration="2588000" />
       <workItem from="1722762951286" duration="11017000" />
       <workItem from="1723199222414" duration="13558000" />
-      <workItem from="1723371368757" duration="1858000" />
+      <workItem from="1723371368757" duration="6546000" />
     </task>
     <task id="LOCAL-00001" summary="add routine">
       <option name="closed" value="true" />
@@ -229,7 +240,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/sim/init_philo.c</url>
-          <line>63</line>
+          <line>64</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

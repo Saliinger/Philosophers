@@ -6,20 +6,22 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 19:13:14 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/07 16:56:04 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/11 15:59:23 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	ft_print(t_philo **philo)
-{
-	while (*philo)
-	{
-		printf("id: %d\n", (*philo)->id);
-		*philo = (*philo)->next;
-	}
-}
+// void	ft_print(t_philo **philo)
+// {
+//     t_philo	*node = *philo;
+
+// 	while (node)
+// 	{
+// 		printf("id: %d\nnbr m: %d\n", node->id, node->number_of_meal);
+// 		node = node->next;
+// 	}
+// }
 
 long long	current_timestamp(void)
 {

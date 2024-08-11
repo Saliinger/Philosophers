@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 22:02:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/10 16:27:21 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/11 15:58:35 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 
 void	end(t_data *data, t_philo **philo)
 {
-	if (data->number_of_death >= 0)
-	{
-		printf("%d has died\n", (*philo)->data->number_of_death);
-	}
-	else
-		printf("end of simulation\n");
+	printf("end of simulation\n");
 	ft_free(data, philo, false);
 }

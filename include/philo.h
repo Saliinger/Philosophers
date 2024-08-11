@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 19:13:21 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/10 16:28:02 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/11 16:01:46 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 # include <unistd.h>
 
 // Struct
+struct	s_philo;
+
 typedef struct s_data
 {
 	int				number_of_philo;
@@ -33,6 +35,7 @@ typedef struct s_data
 	pthread_mutex_t	*fork;
 	pthread_mutex_t	lock;
 	pthread_mutex_t	write;
+	struct s_philo	**l_philo;
 }					t_data;
 
 typedef struct s_philo
@@ -41,6 +44,7 @@ typedef struct s_philo
 	long long		last_meal;
 	long long		last_sleep;
 	long long		last_think;
+	int				number_of_meal;
 	pthread_mutex_t	*l_fork;
 	pthread_mutex_t	*r_fork;
 	pthread_t		thread;
@@ -69,7 +73,7 @@ void				init_data(t_data *data, char **av, t_philo **philo);
 void				ft_free(t_data *data, t_philo **philo, bool fail);
 void				ft_status(t_philo *philo, char *str);
 long long			current_timestamp(void);
-void				ft_print(t_philo **philo);
+// void				ft_print(t_philo **philo);
 bool				is_digit(int ac, char **av);
 
 #endif

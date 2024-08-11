@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 15:52:41 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/10 16:27:37 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/11 15:58:47 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ static void	init_join(t_philo **philo_l, t_data *data)
 
 void	thread(t_data *data, t_philo **philo_l)
 {
+	data->l_philo = philo_l;
 	init_time(philo_l, data);
 	init_thread(philo_l, data);
 	init_join(philo_l, data);

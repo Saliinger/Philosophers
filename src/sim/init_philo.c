@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 11:05:16 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/10 16:27:26 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/11 15:58:39 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ static void	new_philo(t_data *data, t_philo **philo, int index)
 		current->next = new;
 	}
 	new->data = data;
+	new->number_of_meal = 0;
 }
 
 void	create_philo(t_philo **philo, t_data *data)

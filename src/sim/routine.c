@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 22:02:31 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/10 16:27:32 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/11 15:58:43 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,25 @@ static bool	first_turn(t_data *data)
 	else
 		nbr_p++;
 	return (false);
+}
+
+static bool	number_of_meal(t_data *data)
+{
+	t_philo	*philo;
+
+	if (!data->l_philo)
+	{
+		printf("Error: Linked list head is NULL\n");
+		return (false);
+	}
+	philo = *data->l_philo;
+	while (philo)
+	{
+		if (philo->number_of_meal < data->number_of_dishes)
+			return (false);
+		philo = philo->next;
+	}
+	return (true);
 }
 
 void	loop_death(t_philo *philo)
@@ -48,11 +67,8 @@ void	loop_death(t_philo *philo)
 
 void	loop_meal(t_philo *philo)
 {
-	int	i;
-
-	i = 0;
 	while (philo->data->number_of_death == 0
-		&& i++ < philo->data->number_of_dishes)
+		&& number_of_meal(philo->data) == false)
 	{
 		if (first_turn(philo->data) == false)
 		{
@@ -61,6 +77,7 @@ void	loop_meal(t_philo *philo)
 		}
 		else
 			eat(philo);
+		philo->number_of_meal++;
 		if (philo->data->number_of_death > 0)
 			break ;
 		sleeping(philo);
