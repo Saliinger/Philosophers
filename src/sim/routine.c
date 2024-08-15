@@ -23,7 +23,7 @@ static bool	first_turn(t_data *data)
 	return (false);
 }
 
-static bool	number_of_meal(t_data *data)
+/*static bool	number_of_meal(t_data *data)
 {
 	t_philo	*philo;
 
@@ -40,11 +40,11 @@ static bool	number_of_meal(t_data *data)
 		philo = philo->next;
 	}
 	return (true);
-}
+}*/
 
 void	loop_death(t_philo *philo)
 {
-	while (philo->data->number_of_death == 0)
+	while (philo->data->flag == 0)
 	{
 		if (first_turn(philo->data) == false)
 		{
@@ -53,13 +53,13 @@ void	loop_death(t_philo *philo)
 		}
 		else
 			eat(philo);
-		if (philo->data->number_of_death > 0)
+		if (philo->data->flag > 0)
 			break ;
 		sleeping(philo);
-		if (philo->data->number_of_death > 0)
+		if (philo->data->flag > 0)
 			break ;
 		thinking(philo);
-		if (philo->data->number_of_death > 0)
+		if (philo->data->flag > 0)
 			break ;
 	}
 	return ;
@@ -67,8 +67,7 @@ void	loop_death(t_philo *philo)
 
 void	loop_meal(t_philo *philo)
 {
-	while (philo->data->number_of_death == 0
-		&& number_of_meal(philo->data) == false)
+	while (philo->data->flag == 0)
 	{
 		if (first_turn(philo->data) == false)
 		{
@@ -77,14 +76,13 @@ void	loop_meal(t_philo *philo)
 		}
 		else
 			eat(philo);
-		philo->number_of_meal++;
-		if (philo->data->number_of_death > 0)
+		if (philo->data->flag > 0)
 			break ;
 		sleeping(philo);
-		if (philo->data->number_of_death > 0)
+		if (philo->data->flag > 0)
 			break ;
 		thinking(philo);
-		if (philo->data->number_of_death > 0)
+		if (philo->data->flag > 0)
 			break ;
 	}
 	return ;

@@ -24,6 +24,7 @@ void	eat(t_philo *philo)
 	usleep(philo->data->time_to_eat * 1000);
 	pthread_mutex_unlock(philo->l_fork);
 	pthread_mutex_unlock(philo->r_fork);
+	philo->number_of_meal++;
 	philo->last_meal = current_timestamp();
 }
 

@@ -30,7 +30,8 @@ typedef struct s_data
 	long long		time_to_eat;
 	long long		time_to_sleep;
 	int				number_of_dishes;
-	int				number_of_death;
+	int				philo_has_eat_enough;
+	int				flag;
 	pthread_t		monitor;
 	pthread_mutex_t	*fork;
 	pthread_mutex_t	lock;
@@ -51,6 +52,7 @@ typedef struct s_philo
 	struct s_philo	*next;
 	struct s_data	*data;
 	long long		start;
+	bool			is_dead;
 }					t_philo;
 
 // Sim

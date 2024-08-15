@@ -15,8 +15,7 @@
 static void	exit_m(t_data *data, t_philo *philo)
 {
 	pthread_mutex_lock(&data->lock);
-	data->number_of_death += 1;
-	ft_status(philo, "died");
+	data->flag += 1;
 	pthread_mutex_unlock(&data->lock);
 	if (data->number_of_philo == 1)
 		pthread_mutex_unlock(philo->l_fork);
@@ -30,20 +29,20 @@ void	*monitor(void *arg)
 
 	philo = (t_philo *)arg;
 	data = philo->data;
-	while (data->number_of_death == 0)
+	while (data->flag == 0)
 	{
 		philo = (t_philo *)arg;
 		while (philo)
 		{
 			current_time = current_timestamp();
-			if (current_time > data->time_to_die + philo->last_meal)
+			if (current_time > data->time_to_die + philo->last_meal && current_time > data->time_to_die + philo->last_sleep && current_time > data->time_to_die + philo->last_think)
 			{
 				exit_m(data, philo);
 				return (NULL);
 			}
 			philo = philo->next;
 		}
-		usleep(1000);
+		usleep(100);
 	}
 	return (NULL);
 }
