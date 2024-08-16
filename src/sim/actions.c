@@ -15,16 +15,19 @@
 void	eat(t_philo *philo)
 {
 	pthread_mutex_lock(philo->l_fork);
+	if (philo->data->flag > 0)
+		return ;
 	ft_status(philo, "has taken a fork");
 	pthread_mutex_lock(philo->r_fork);
-	if (philo->data->number_of_death > 0)
+	if (philo->data->flag > 0)
 		return ;
 	ft_status(philo, "has taken a fork");
 	ft_status(philo, "is eating");
 	usleep(philo->data->time_to_eat * 1000);
 	pthread_mutex_unlock(philo->l_fork);
 	pthread_mutex_unlock(philo->r_fork);
-	philo->number_of_meal++;
+	if (philo->data->number_of_dishes > 0)
+		philo->number_of_meal++;
 	philo->last_meal = current_timestamp();
 }
 

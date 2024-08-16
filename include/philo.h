@@ -53,6 +53,7 @@ typedef struct s_philo
 	struct s_data	*data;
 	long long		start;
 	bool			is_dead;
+	bool			has_eat_enough;
 }					t_philo;
 
 // Sim
@@ -75,7 +76,7 @@ void				init_data(t_data *data, char **av, t_philo **philo);
 void				ft_free(t_data *data, t_philo **philo, bool fail);
 void				ft_status(t_philo *philo, char *str);
 long long			current_timestamp(void);
-// void				ft_print(t_philo **philo);
+void				ft_print(t_philo **philo);
 bool				is_digit(int ac, char **av);
 
 #endif

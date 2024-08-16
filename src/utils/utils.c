@@ -12,16 +12,16 @@
 
 #include "philo.h"
 
-// void	ft_print(t_philo **philo)
-// {
-//     t_philo	*node = *philo;
+void	ft_print(t_philo **philo)
+{
+    t_philo	*node = *philo;
 
-// 	while (node)
-// 	{
-// 		printf("id: %d\nnbr m: %d\n", node->id, node->number_of_meal);
-// 		node = node->next;
-// 	}
-// }
+ 	while (node)
+ 	{
+ 		printf("id: %d\nnbr m: %d\n", node->id, node->number_of_meal);
+ 		node = node->next;
+ 	}
+}
 
 long long	current_timestamp(void)
 {

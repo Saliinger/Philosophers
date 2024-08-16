@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "philo.h"
-#include <stdio.h>
 
 void	start(t_data *data, t_philo **philo)
 {
@@ -21,4 +20,3 @@ void	start(t_data *data, t_philo **philo)
 	end(data, philo);
 }
 
-// ft_print(philo);

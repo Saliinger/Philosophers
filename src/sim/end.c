@@ -12,8 +12,28 @@
 
 #include "philo.h"
 
+static t_philo	*there_is_a_cadaver(t_philo **l_philo)
+{
+	t_philo *philo;
+
+	philo = *l_philo;
+	while (philo)
+	{
+		if (philo->is_dead == true)
+			return (philo);
+		philo = philo->next;
+	}
+	return (NULL);
+}
+
 void	end(t_data *data, t_philo **philo)
 {
+	t_philo	*philo_dead;
+
+	philo_dead = there_is_a_cadaver(philo);
+	if (philo_dead != NULL)
+		ft_status(philo_dead, "is dead");
 	printf("end of simulation\n");
+	ft_print(philo);
 	ft_free(data, philo, false);
 }

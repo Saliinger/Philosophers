@@ -15,7 +15,7 @@
 static void	exit_m(t_data *data, t_philo *philo)
 {
 	pthread_mutex_lock(&data->lock);
-	data->flag += 1;
+	data->flag = 1;
 	pthread_mutex_unlock(&data->lock);
 	if (data->number_of_philo == 1)
 		pthread_mutex_unlock(philo->l_fork);
@@ -37,8 +37,24 @@ void	*monitor(void *arg)
 			current_time = current_timestamp();
 			if (current_time > data->time_to_die + philo->last_meal && current_time > data->time_to_die + philo->last_sleep && current_time > data->time_to_die + philo->last_think)
 			{
+				philo->is_dead = true;
 				exit_m(data, philo);
 				return (NULL);
+			}
+			if (data->philo_has_eat_enough == data->number_of_philo)
+			{
+				exit_m(data, philo);
+				return (NULL);
+			}
+			if (data->number_of_dishes > 0)
+			{
+				if (philo->has_eat_enough == false && philo->number_of_meal >= data->number_of_dishes)
+				{
+					pthread_mutex_lock(&data->lock);
+					data->philo_has_eat_enough++;
+					philo->has_eat_enough = true;
+					pthread_mutex_unlock(&data->lock);
+				}
 			}
 			philo = philo->next;
 		}

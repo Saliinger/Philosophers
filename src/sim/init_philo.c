@@ -51,6 +51,8 @@ static void	new_philo(t_data *data, t_philo **philo, int index)
 	}
 	new->data = data;
 	new->number_of_meal = 0;
+	new->is_dead = false;
+	new->has_eat_enough = false;
 }
 
 void	create_philo(t_philo **philo, t_data *data)

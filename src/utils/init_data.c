@@ -14,7 +14,8 @@
 
 void	init_data(t_data *data, char **av, t_philo **philo)
 {
-	data->number_of_death = 0;
+	data->philo_has_eat_enough = 0;
+	data->flag = 0;
 	data->number_of_philo = ft_atoi(av[1]);
 	data->time_to_die = ft_atoi(av[2]);
 	data->time_to_eat = ft_atoi(av[3]);
