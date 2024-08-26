@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "philo.h"
+#include <stdio.h>
 
 static void	error_mutex(t_data *data, t_philo **philo)
 {

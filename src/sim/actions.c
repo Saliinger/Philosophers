@@ -20,7 +20,10 @@ void	eat(t_philo *philo)
 	ft_status(philo, "has taken a fork");
 	pthread_mutex_lock(philo->r_fork);
 	if (philo->data->flag > 0)
+	{
+		pthread_mutex_unlock(philo->l_fork);
 		return ;
+	}
 	ft_status(philo, "has taken a fork");
 	ft_status(philo, "is eating");
 	usleep(philo->data->time_to_eat * 1000);
