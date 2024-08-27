@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 22:02:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/11 15:58:35 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/27 10:42:25 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static t_philo	*there_is_a_cadaver(t_philo **l_philo)
 {
-	t_philo *philo;
+	t_philo	*philo;
 
 	philo = *l_philo;
 	while (philo)

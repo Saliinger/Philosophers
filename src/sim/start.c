@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 13:53:33 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/11 16:03:00 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/27 10:44:16 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,3 @@ void	start(t_data *data, t_philo **philo)
 	thread(data, philo);
 	end(data, philo);
 }
-
