@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 22:02:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/27 10:42:25 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/27 11:16:45 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,5 @@ void	end(t_data *data, t_philo **philo)
 	if (philo_dead != NULL)
 		ft_status(philo_dead, "is dead");
 	printf("end of simulation\n");
-	ft_print(philo);
 	ft_free(data, philo, false);
 }

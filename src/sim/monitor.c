@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 16:27:58 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/11 15:58:41 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/27 11:20:43 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,35 @@ static void	exit_m(t_data *data, t_philo *philo)
 	pthread_mutex_unlock(&data->lock);
 	if (data->number_of_philo == 1)
 		pthread_mutex_unlock(philo->l_fork);
+}
+
+static bool	dead_checker(t_philo *philo, long long current_time, t_data *data)
+{
+	if (current_time > data->time_to_die + philo->last_meal
+		&& current_time > data->time_to_die + philo->last_sleep
+		&& current_time > data->time_to_die + philo->last_think)
+	{
+		philo->is_dead = true;
+		exit_m(data, philo);
+		return (true);
+	}
+	if (data->philo_has_eat_enough == data->number_of_philo)
+	{
+		exit_m(data, philo);
+		return (true);
+	}
+	if (data->number_of_dishes > 0)
+	{
+		if (philo->has_eat_enough == false
+			&& philo->number_of_meal >= data->number_of_dishes)
+		{
+			pthread_mutex_lock(&data->lock);
+			data->philo_has_eat_enough++;
+			philo->has_eat_enough = true;
+			pthread_mutex_unlock(&data->lock);
+		}
+	}
+	return (false);
 }
 
 void	*monitor(void *arg)
@@ -35,27 +64,8 @@ void	*monitor(void *arg)
 		while (philo)
 		{
 			current_time = current_timestamp();
-			if (current_time > data->time_to_die + philo->last_meal && current_time > data->time_to_die + philo->last_sleep && current_time > data->time_to_die + philo->last_think)
-			{
-				philo->is_dead = true;
-				exit_m(data, philo);
+			if (dead_checker(philo, current_time, data) == true)
 				return (NULL);
-			}
-			if (data->philo_has_eat_enough == data->number_of_philo)
-			{
-				exit_m(data, philo);
-				return (NULL);
-			}
-			if (data->number_of_dishes > 0)
-			{
-				if (philo->has_eat_enough == false && philo->number_of_meal >= data->number_of_dishes)
-				{
-					pthread_mutex_lock(&data->lock);
-					data->philo_has_eat_enough++;
-					philo->has_eat_enough = true;
-					pthread_mutex_unlock(&data->lock);
-				}
-			}
 			philo = philo->next;
 		}
 		usleep(100);
