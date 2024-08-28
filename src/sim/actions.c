@@ -36,13 +36,13 @@ void	eat(t_philo *philo)
 
 void	thinking(t_philo *philo)
 {
-	ft_status(philo, "is thinking", false);
 	philo->last_think = current_timestamp();
+	ft_status(philo, "is thinking", false);
 }
 
 void	sleeping(t_philo *philo)
 {
-	ft_status(philo, "is sleeping", false);
 	philo->last_sleep = current_timestamp();
+	ft_status(philo, "is sleeping", false);
 	usleep(philo->data->time_to_sleep * 1000);
 }

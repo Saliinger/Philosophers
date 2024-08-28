@@ -32,7 +32,7 @@ void	end(t_data *data, t_philo **philo)
 
 	philo_dead = there_is_a_cadaver(philo);
 	if (philo_dead != NULL)
-		ft_status(philo_dead, "is dead");
+		ft_status(philo_dead, "is dead", true);
 	printf("end of simulation\n");
 	ft_free(data, philo, false);
 }

@@ -23,7 +23,7 @@ static void	exit_m(t_data *data, t_philo *philo)
 
 static bool	dead_checker(t_philo *philo, long long current_time, t_data *data)
 {
-	if (current_time > data->time_to_die + philo->last_meal)
+	if (current_time >= data->time_to_die + philo->last_meal)
 	{
 		philo->is_dead = true;
 		exit_m(data, philo);
@@ -66,7 +66,7 @@ void	*monitor(void *arg)
 				return (NULL);
 			philo = philo->next;
 		}
-		usleep(10);
+		//usleep(10);
 	}
 	return (NULL);
 }
