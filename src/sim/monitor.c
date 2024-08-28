@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 16:27:58 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/27 11:20:43 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/28 14:12:19 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,13 @@ static void	exit_m(t_data *data, t_philo *philo)
 	pthread_mutex_lock(&data->lock);
 	data->flag = 1;
 	pthread_mutex_unlock(&data->lock);
-	if (data->number_of_philo == 1)
-		pthread_mutex_unlock(philo->l_fork);
+	// if (data->number_of_philo == 1)
+	pthread_mutex_unlock(philo->l_fork);
 }
 
 static bool	dead_checker(t_philo *philo, long long current_time, t_data *data)
 {
-	if (current_time > data->time_to_die + philo->last_meal
-		&& current_time > data->time_to_die + philo->last_sleep
-		&& current_time > data->time_to_die + philo->last_think)
+	if (current_time > data->time_to_die + philo->last_meal)
 	{
 		philo->is_dead = true;
 		exit_m(data, philo);
@@ -68,7 +66,7 @@ void	*monitor(void *arg)
 				return (NULL);
 			philo = philo->next;
 		}
-		usleep(100);
+		usleep(10);
 	}
 	return (NULL);
 }

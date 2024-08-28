@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 19:13:21 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/27 11:14:07 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/28 14:15:37 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void				eat(t_philo *philo);
 int					ft_atoi(const char *str);
 void				init_data(t_data *data, char **av, t_philo **philo);
 void				ft_free(t_data *data, t_philo **philo, bool fail);
-void				ft_status(t_philo *philo, char *str);
+void				ft_status(t_philo *philo, char *str, bool is_dead);
 long long			current_timestamp(void);
 //void				ft_print(t_philo **philo);
 bool				is_digit(int ac, char **av);

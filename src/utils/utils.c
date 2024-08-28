@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 19:13:14 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/27 10:41:46 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/28 14:16:46 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,9 @@ long long	current_timestamp(void)
 	return (tv.tv_sec * 1000 + tv.tv_usec / 1000);
 }
 
-void	ft_status(t_philo *philo, char *str)
+void	ft_status(t_philo *philo, char *str, bool is_dead)
 {
+	if 
 	pthread_mutex_lock(&philo->data->write);
 	printf("%lld %d %s\n", current_timestamp() - philo->start, philo->id, str);
 	pthread_mutex_unlock(&philo->data->write);
