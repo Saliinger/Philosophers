@@ -62,14 +62,16 @@ static void	init_join(t_philo **philo_l, t_data *data)
 	{
 		if (pthread_join(philo->thread, NULL) != 0)
 		{
-			printf("Error\nthe joining of the thread has fail\n");
+			printf("Error\nthe thread has fail\n");
+			data->flag = 1;
 			ft_free(data, philo_l, true);
 		}
 		philo = philo->next;
 	}
 	if (pthread_join(data->monitor, NULL) != 0)
 	{
-		printf("Error\nthe joining of the thread has fail\n");
+		printf("Error\nthe thread has fail\n");
+		data->flag = 1;
 		ft_free(data, philo_l, true);
 	}
 }

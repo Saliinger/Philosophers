@@ -12,18 +12,36 @@
 
 #include "philo.h"
 
+static t_philo	*there_is_a_cadaver(t_philo **l_philo)
+{
+	t_philo	*philo;
+
+	philo = *l_philo;
+	while (philo)
+	{
+		if (philo->is_dead == true)
+			return (philo);
+		philo = philo->next;
+	}
+	return (NULL);
+}
+
 static void	exit_m(t_data *data, t_philo *philo)
 {
+	t_philo	*philo_dead;
+
 	pthread_mutex_lock(&data->lock);
 	data->flag = 1;
 	pthread_mutex_unlock(&data->lock);
-	// if (data->number_of_philo == 1)
 	pthread_mutex_unlock(philo->l_fork);
+	philo_dead = there_is_a_cadaver(data->l_philo);
+	if (philo_dead != NULL)
+		ft_status(philo_dead, "is dead", true);
 }
 
 static bool	dead_checker(t_philo *philo, long long current_time, t_data *data)
 {
-	if (current_time >= data->time_to_die + philo->last_meal)
+	if (current_time > data->time_to_die + philo->last_meal)
 	{
 		philo->is_dead = true;
 		exit_m(data, philo);

@@ -36,7 +36,8 @@ void	ft_status(t_philo *philo, char *str, bool is_dead)
 	if (philo->data->flag == 0) 
 	{
 		pthread_mutex_lock(&philo->data->write);
-		printf("%lld %d %s\n", current_timestamp() - philo->start, philo->id, str);
+		if (philo->data->flag == 0)
+			printf("%lld %d %s\n", current_timestamp() - philo->start, philo->id, str);
 		pthread_mutex_unlock(&philo->data->write);
 	}
 	if (is_dead == true)
