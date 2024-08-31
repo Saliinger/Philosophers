@@ -32,6 +32,7 @@ typedef struct s_data
 	int				number_of_dishes;
 	int				philo_has_eat_enough;
 	int				flag;
+	int				philo_is_dead;
 	pthread_t		monitor;
 	pthread_mutex_t	*fork;
 	pthread_mutex_t	lock;

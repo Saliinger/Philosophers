@@ -25,8 +25,8 @@ void	eat(t_philo *philo)
 		return ;
 	}
 	ft_status(philo, "has taken a fork", false);
-	philo->last_meal = current_timestamp();
 	ft_status(philo, "is eating", false);
+	philo->last_meal = current_timestamp();
 	usleep(philo->data->time_to_eat * 1000);
 	pthread_mutex_unlock(philo->l_fork);
 	pthread_mutex_unlock(philo->r_fork);
@@ -36,13 +36,14 @@ void	eat(t_philo *philo)
 
 void	thinking(t_philo *philo)
 {
-	philo->last_think = current_timestamp();
 	ft_status(philo, "is thinking", false);
+	philo->last_think = current_timestamp();
+
 }
 
 void	sleeping(t_philo *philo)
 {
-	philo->last_sleep = current_timestamp();
 	ft_status(philo, "is sleeping", false);
+	philo->last_sleep = current_timestamp();
 	usleep(philo->data->time_to_sleep * 1000);
 }

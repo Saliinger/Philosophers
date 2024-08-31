@@ -34,16 +34,22 @@ static void	exit_m(t_data *data, t_philo *philo)
 	data->flag = 1;
 	pthread_mutex_unlock(&data->lock);
 	pthread_mutex_unlock(philo->l_fork);
-	philo_dead = there_is_a_cadaver(data->l_philo);
-	if (philo_dead != NULL)
-		ft_status(philo_dead, "is dead", true);
+	if (data->philo_is_dead > 0)
+	{
+		philo_dead = there_is_a_cadaver(data->l_philo);
+		if (philo_dead != NULL)
+			ft_status(philo_dead, "is dead", true);
+	}
 }
 
 static bool	dead_checker(t_philo *philo, long long current_time, t_data *data)
 {
 	if (current_time > data->time_to_die + philo->last_meal)
 	{
+		pthread_mutex_lock(&data->lock);
 		philo->is_dead = true;
+		data->philo_is_dead += 1;
+		pthread_mutex_unlock(&data->lock);
 		exit_m(data, philo);
 		return (true);
 	}
@@ -84,7 +90,6 @@ void	*monitor(void *arg)
 				return (NULL);
 			philo = philo->next;
 		}
-		//usleep(10);
 	}
 	return (NULL);
 }
