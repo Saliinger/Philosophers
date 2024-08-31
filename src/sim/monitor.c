@@ -39,6 +39,7 @@ static void	exit_m(t_data *data, t_philo *philo)
 		philo_dead = there_is_a_cadaver(data->l_philo);
 		if (philo_dead != NULL)
 			ft_status(philo_dead, "is dead", true);
+		//printf("%d lm %lld lt %lld ls %lld\n", philo_dead->id, philo_dead->last_meal, philo_dead->last_think, philo_dead->last_sleep);
 	}
 }
 
