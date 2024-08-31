@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 16:09:47 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/28 14:16:15 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/31 15:13:57 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ void	thinking(t_philo *philo)
 {
 	ft_status(philo, "is thinking", false);
 	philo->last_think = current_timestamp();
-
 }
 
 void	sleeping(t_philo *philo)

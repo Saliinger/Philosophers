@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 16:27:58 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/28 14:12:19 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/31 15:15:35 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,19 +39,23 @@ static void	exit_m(t_data *data, t_philo *philo)
 		philo_dead = there_is_a_cadaver(data->l_philo);
 		if (philo_dead != NULL)
 			ft_status(philo_dead, "is dead", true);
-		//printf("%d lm %lld lt %lld ls %lld\n", philo_dead->id, philo_dead->last_meal, philo_dead->last_think, philo_dead->last_sleep);
 	}
+}
+
+static void	extend_dead_checker(t_philo *philo, t_data *data)
+{
+	pthread_mutex_lock(&data->lock);
+	philo->is_dead = true;
+	data->philo_is_dead += 1;
+	pthread_mutex_unlock(&data->lock);
+	exit_m(data, philo);
 }
 
 static bool	dead_checker(t_philo *philo, long long current_time, t_data *data)
 {
 	if (current_time > data->time_to_die + philo->last_meal)
 	{
-		pthread_mutex_lock(&data->lock);
-		philo->is_dead = true;
-		data->philo_is_dead += 1;
-		pthread_mutex_unlock(&data->lock);
-		exit_m(data, philo);
+		extend_dead_checker(philo, data);
 		return (true);
 	}
 	if (data->philo_has_eat_enough == data->number_of_philo)

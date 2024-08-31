@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 19:13:14 by anoukan           #+#    #+#             */
-/*   Updated: 2024/08/28 14:16:46 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/08/31 15:14:09 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,20 +33,21 @@ long long	current_timestamp(void)
 
 void	ft_status(t_philo *philo, char *str, bool is_dead)
 {
-	if (philo->data->flag == 0) 
+	if (philo->data->flag == 0)
 	{
 		pthread_mutex_lock(&philo->data->write);
 		if (philo->data->flag == 0)
-			printf("%lld %d %s\n", current_timestamp() - philo->start, philo->id, str);
+			printf("%lld %d %s\n", current_timestamp() - philo->start,
+				philo->id, str);
 		pthread_mutex_unlock(&philo->data->write);
 	}
 	if (is_dead == true)
-		{
+	{
 		pthread_mutex_lock(&philo->data->write);
-		printf("%lld %d %s\n", current_timestamp() - philo->start, philo->id, str);
+		printf("%lld %d %s\n", current_timestamp() - philo->start, philo->id,
+			str);
 		pthread_mutex_unlock(&philo->data->write);
 	}
-
 }
 
 bool	is_digit(int ac, char **av)
